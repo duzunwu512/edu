@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Swiper demo</title>
+  <!--<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">-->
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <link rel="icon" type="image/png" href="assets/amazeui/i/favicon.png">
+ 
+  <!-- Demo styles -->
+  <style>
+    html, body {
+      position: relative;
+      height: 100%;
+    }
+    body {
+      background: #eee;
+      font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+      font-size: 14px;
+      color:#000;
+      margin: 0;
+      padding: 0;
+    }
+    .swiper-container {
+      width: 100%;
+      height: 100%;
+    }
+    .swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      background: #fff;
+
+      /* Center slide text vertically */
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      -webkit-justify-content: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      -webkit-align-items: center;
+      align-items: center;
+    }
+    .swiper-pagination-bullet {
+      width: 20px;
+      height: 20px;
+      text-align: center;
+      line-height: 20px;
+      font-size: 12px;
+      color:#000;
+      opacity: 1;
+      background: rgba(0,0,0,0.2);
+    }
+    .swiper-pagination-bullet-active {
+      color:#fff;
+      background: #007aff;
+    }
+	
+	.inline-demo {
+		border: 1px solid #CCC;
+		width: 102px;
+		height: 102px;
+		margin-right: 5px;
+		flex-shrink: 0;
+		margin: 10px 50px;
+	}
+	.inline-big {
+		position:absolute;
+		float:center; 
+		top:50px;
+		background:#4d9250;
+	}
+	
+	.sub-title {
+		text-align: left;
+		padding-top: 20px ;
+		padding-left: 50px;
+	}
+	.sub-title div{
+		margin: 3px ;
+	}
+	
+	p {
+    margin: 0 10px 8px;
+	}
+	
+	.main-front{
+		font-family: STKaiti, DFKai-SB, KaiTi_GB2312; 
+		font-size:100px;
+
+	}
+	.big-front{
+		font-size:300px;
+		width:100%;
+		
+	}
+	.big-main-content{
+		height:100%;
+	}
+  </style>
+</head>
+<body >
+  <audio src="01-waking-up.mp3" controls="controls" id="audio">
+Your browser does not support the audio element.
+</audio>
+ <div>
+<span style="padding-left:15px; font-size: 24px;">
+					<a href="javascript:void(0);" data-url="01-waking-up.mp3" class="mp3-play"><button class="fa fa-volume-up" aria-hidden="true">sssssssss</button></a>
+				</span>
+		</div>		
+  <!-- Swiper JS -->
+  <script src="../js/zepto.min.js"></script>
+
+  <!-- Initialize Swiper -->
+  <script>
+    
+	
+	$(function(){
+		$(".mp3-play").on("click", function(){
+			$("audio").attr("src",  $(this).data("url"));
+			console.log($("#audio").attr("src"));
+			//myAuto.play();
+			var player = $('#audio')[0];
+			player.playbackRate = 0.6;
+			player.defaultPlaybackRate=0.6;
+			player.play();
+			//$('video').trigger('pause');
+		});
+		
+		
+		
+	
+	});
+	
+	
+
+
+  </script>
+</body>
+</html>

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <title>Swiper demo</title>
@@ -7,7 +8,7 @@
   <meta name="description" content="">
   <meta name="keywords" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
- 
+
   <meta name="renderer" content="webkit">
   <meta http-equiv="Cache-Control" content="no-siteapp" />
   <link rel="icon" type="image/png" href="assets/amazeui/i/favicon.png">
@@ -15,12 +16,14 @@
   <link rel="stylesheet" href="assets/swiper/css/swiper.min.css" type='text/css'>
   <link rel="stylesheet" href="http://cdn.clouddeep.cn/amazeui/1.0.1/css/amazeui.min.css" type='text/css'>
 
-  <link rel='stylesheet' id='bootstrap-css'  href='http://www.fontawesome.com.cn/wp-content/themes/deeptimes/assets/bootstrap/css/bootstrap.min.css' type='text/css' media='all' />
-<link rel='stylesheet' id='font-awesome-css'  href='http://www.fontawesome.com.cn/wp-content/themes/deeptimes/fonts/font-awesome/css/font-awesome.min.css' type='text/css' media='all' />
+  <link rel='stylesheet' id='bootstrap-css' href='http://www.fontawesome.com.cn/wp-content/themes/deeptimes/assets/bootstrap/css/bootstrap.min.css'
+    type='text/css' media='all' />
+  <link rel='stylesheet' id='font-awesome-css' href='http://www.fontawesome.com.cn/wp-content/themes/deeptimes/fonts/font-awesome/css/font-awesome.min.css'
+    type='text/css' media='all' />
 
   <!-- Demo styles -->
   <style>
-	* { touch-action: pan-y; } 
+    * { touch-action: pan-y; } 
 	
     html, body {
       position: relative;
@@ -71,6 +74,10 @@
       color:#fff;
       background: #007aff;
     }
+
+    .audio-active{
+      color: #15afef
+    }
 	
 	
 	.main-front{
@@ -117,25 +124,27 @@ body:after{ content:"现在是横屏"; width:100%; height:100%; text-align:cente
 
   </style>
 </head>
+
 <body ontouchstart>
   <!-- Swiper -->
   <div class="swiper-container">
     <div class="swiper-wrapper">
-		<script type="text/template" id="myTemplate">
+      
+      <script type="text/template" id="myTemplate">
 		{{#each result}} 
 		  <div class="swiper-slide">
 			
 			<div class="" style="width: 100%;height: 100%; ">
 				
-				<div style=" " class="imgdiv">
-					<div>
-						<img style=" " src="p1.png"/>
+				<div  class="imgdiv">
+					<div style="width: 100%; height: 100%; overflow: hidden;">
+						<img style="width: auto; height: 100%; " src="p1.png"/>
 					</div>
 				</div>
 				<div style="" class="textdiv">
 					<span style="font-size: 30px;">{{en}}</span>
 					<span style="padding-left:15px; font-size: 24px;">
-						<a href="javascript:void(0);" data-url="http://appcdn.fanyi.baidu.com/zhdict/mp3/han4.mp3" class="mp3-play"><i class="fa fa-volume-up" aria-hidden="true"></i></a>
+						<a href="javascript:void(0);" class="mp3-play "><i class="fa fa-volume-up" aria-hidden="true"></i></a>
 					</span>
 				</div>
 				<div class="clear"></div>
@@ -146,93 +155,101 @@ body:after{ content:"现在是横屏"; width:100%; height:100%; text-align:cente
     </div>
     <!-- Add Pagination -->
     <div class="swiper-pagination"></div>
-	
-	<div id="fmp_flash_div" style="display:none"><audio id="audio"></audio></div>
-  </div>
-  
 
-  <!-- Swiper JS -->
-  
+    <div id="fmp_flash_div" style="display:none"><audio id="audio" src="01-waking-up.mp3"></audio></div>
+  </div>
+
   <script src="assets/swiper/js/swiper.min.js"></script>
   <script src="../js/zepto.min.js"></script>
-  
+
   <script src="https://cdn.bootcss.com/handlebars.js/4.2.0/handlebars.min.js"></script>
 
   <!-- Initialize Swiper -->
   <script>
-   	$(function(){
-		$(".mp3-play").on("click", function(){
-			$("#audio").attr("src",  $(this).data("url"));
-			console.log($("#audio").attr("src"));
-			//myAuto.play();
-			$('#audio').trigger('play');
-			//$('video').trigger('pause');
-		});
-		
-		$(document).on("click", ".main-content", function(){
-			$(this).toggleClass('big-main-content');
-			$(this).find("span.main-front").toggleClass('big-front');
-		});
-		
-		
-		$(document).on("click", ".inline-demo", function(){
-			
-			
-			return false;
-		});
-		
-		
-	
-	//cnletter('国', 100, 100);
-	
-	//中国、中间、中国、中间、中国、中间
-	var data={result:[
-	{en:'The rooster wakes up',mp3:'audio/80s_vibe.mp3',cn:'汉族,汉室,汉化'},
-	{en:'The cow wakes up',mp3:'audio/80s_vibe.mp3',cn:'汉族,汉室,汉化'},
-	{en:'The pig wakes up',mp3:'audio/80s_vibe.mp3',cn:'汉族,汉室,汉化'},
-	{en:'The horse wakes up',mp3:'audio/80s_vibe.mp3',cn:'汉族,汉室,汉化'},
-	{en:'The turkey wakes up',mp3:'audio/80s_vibe.mp3',cn:'汉族,汉室,汉化'},
-	{en:'The sheep wakes up',mp3:'audio/80s_vibe.mp3',cn:'汉族,汉室,汉化'},
-	{en:'The duck wakes up',mp3:'audio/80s_vibe.mp3',cn:'汉族,汉室,汉化'},
-	{en:'And the chick wakes up',mp3:'audio/80s_vibe.mp3',cn:'汉族,汉室,汉化'}
-	]};
-	
-	
-	var tpl   =  $("#myTemplate").html();
-	//预编译模板
-	var template = Handlebars.compile(tpl);
-	//匹配json内容
-	var html = template(data);
-	//输入模板
-	$('.swiper-wrapper').html(html);
-	
-	var t = $(".main-front").first().text();
-	
-	
-	 var swiper = new Swiper('.swiper-container', {
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-		//dynamicBullets: true,
-        renderBullet: function (index, className) {
-          return '<span class="' + className + '">' + (index + 1) + '</span>';
+    $(function () {
+      //$("#audio").attr("src", $("#audio").data("url"));
+       var audio = document.getElementById("audio");
+
+       $(document).on("click", ".mp3-play", function () {
+        
+        
+        if($("#audio").data('status')==='start'){
+          audio.pause();
+          $("#audio").data('status', 'stop'); 
+        }else{
+          audio.play();
+          $("#audio").data('status', 'start');
+        }
+        $(this).toggleClass("audio-active");
+        //$('video').trigger('pause');
+      });
+
+      
+      $(document).on("click", ".main-content", function () {
+        $(this).toggleClass('big-main-content');
+        $(this).find("span.main-front").toggleClass('big-front');
+      });
+
+
+      $(document).on("click", ".inline-demo", function () {
+
+
+        return false;
+      });
+
+      //cnletter('国', 100, 100);
+
+      //中国、中间、中国、中间、中国、中间
+      var data = {
+        result: [
+          { en: 'The rooster wakes up', mp3: 'audio/80s_vibe.mp3', cn: '汉族,汉室,汉化' },
+          { en: 'The cow wakes up', mp3: 'audio/80s_vibe.mp3', cn: '汉族,汉室,汉化' },
+          { en: 'The pig wakes up', mp3: 'audio/80s_vibe.mp3', cn: '汉族,汉室,汉化' },
+          { en: 'The horse wakes up', mp3: 'audio/80s_vibe.mp3', cn: '汉族,汉室,汉化' },
+          { en: 'The turkey wakes up', mp3: 'audio/80s_vibe.mp3', cn: '汉族,汉室,汉化' },
+          { en: 'The sheep wakes up', mp3: 'audio/80s_vibe.mp3', cn: '汉族,汉室,汉化' },
+          { en: 'The duck wakes up', mp3: 'audio/80s_vibe.mp3', cn: '汉族,汉室,汉化' },
+          { en: 'And the chick wakes up', mp3: 'audio/80s_vibe.mp3', cn: '汉族,汉室,汉化' }
+        ]
+      };
+
+
+      var tpl = $("#myTemplate").html();
+      //预编译模板
+      var template = Handlebars.compile(tpl);
+      //匹配json内容
+      var html = template(data);
+      //输入模板
+      $('.swiper-wrapper').html(html);
+
+      var t = $(".main-front").first().text();
+
+
+      var swiper = new Swiper('.swiper-container', {
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+          //dynamicBullets: true,
+          renderBullet: function (index, className) {
+            return '<span class="' + className + '">' + (index + 1) + '</span>';
+          },
         },
-      },
-	  on: {
-		slideChange: function(){
-			var ele = $("#grid-background-target"+swiper.activeIndex);
-			var init = ele.data("init");
-			if(!init){
-				var text = $(ele).parents('.swiper-slide').find('.main-content').find(".main-front").text();
-				$(ele).data('init', '1');
-			}
-			$(ele).css('width', '200px');			
-		}
-	  }
+        on: {
+          slideChange: function () {
+            var ele = $("#grid-background-target" + swiper.activeIndex);
+            var init = ele.data("init");
+            if (!init) {
+              var text = $(ele).parents('.swiper-slide').find('.main-content').find(".main-front").text();
+              $(ele).data('init', '1');
+            }
+            $(ele).css('width', '200px');
+          }
+        }
+      });
+
     });
-	
-	});
-	
+
   </script>
 </body>
+
 </html>

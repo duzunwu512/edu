@@ -7,6 +7,7 @@
   <meta name="description" content="">
   <meta name="keywords" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+ 
   <meta name="renderer" content="webkit">
   <meta http-equiv="Cache-Control" content="no-siteapp" />
   <link rel="icon" type="image/png" href="assets/amazeui/i/favicon.png">
@@ -19,17 +20,7 @@
 
   <!-- Demo styles -->
   <style>
-  @font-face { 
-	font-family: STKAITI; /*这里是说明调用来的字体名字*/ 
-	src: url('front/STKAITI.TTF'); /*这里是字体文件路径*/ 
-    }
 	* { touch-action: pan-y; } 
-	@media screen and (orientation: landscape){
-	　body{background:#000}
-	}
-	@media (orientation: portrait) { 
-		body { transform: rotate(90deg); }
-	} 
 	
     html, body {
       position: relative;
@@ -93,6 +84,37 @@
             width: 150px;
             float: right;
         }
+
+/*竖屏*/
+@media only screen and (orientation:portrait) {
+	/*body *{ display:none !important;}
+	body:after{ content:"现在是竖屏"; width:100%; height:100%; text-align:center; display:flex; align-items:center; justify-content:center;}*/
+  .imgdiv{
+    width:100%;
+    height: 50%;
+  }
+  .textdiv{
+    width:100%; 
+    height: 50%;
+    background-color:#4d9250;
+    padding: 40px 20px;
+  }
+}
+/*横屏*/
+@media only screen and (orientation:landscape) {
+	/*body *{ display:none !important;}
+body:after{ content:"现在是横屏"; width:100%; height:100%; text-align:center; display:flex; align-items:center; justify-content:center;}*/
+  .imgdiv{
+    float:left; width:50%;
+  }
+  .textdiv{
+    margin-left:50%; width:50%; 
+    background-color:#4d9250;
+    padding: 40px 20px;
+    height: 100%;
+  }
+}
+
   </style>
 </head>
 <body ontouchstart>
@@ -103,25 +125,20 @@
 		{{#each result}} 
 		  <div class="swiper-slide">
 			
-			<div class="" style="background-color:#4d9250;width: 100%;height: 100%; padding: 50px 20px;">
+			<div class="" style="width: 100%;height: 100%; ">
 				
-				<div style="float:left; width:50%; " class="">
+				<div style=" " class="imgdiv">
 					<div>
-						<img style="    padding: 0px 20px;;" src="p1.png"/>
+						<img style=" " src="p1.png"/>
 					</div>
 				</div>
-				<div style="margin-left:50%; width:50%; ">
+				<div style="" class="textdiv">
 					<span style="font-size: 30px;">{{en}}</span>
 					<span style="padding-left:15px; font-size: 24px;">
 						<a href="javascript:void(0);" data-url="http://appcdn.fanyi.baidu.com/zhdict/mp3/han4.mp3" class="mp3-play"><i class="fa fa-volume-up" aria-hidden="true"></i></a>
 					</span>
 				</div>
 				<div class="clear"></div>
-				<!--<div style="width:100%; position: absolute; bottom: 50px;" class="">
-					<div>
-						<span class="main-front">译：{{cn}}</span>
-					</div>				
-				</div>-->
 			</div>
 		  </div>
 	  {{/each}}

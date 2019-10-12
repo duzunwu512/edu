@@ -16,31 +16,39 @@
   <link rel="stylesheet" href="assets/swiper/css/swiper.min.css" type='text/css'>
   <link rel="stylesheet" href="http://cdn.clouddeep.cn/amazeui/1.0.1/css/amazeui.min.css" type='text/css'>
 
-  <link rel='stylesheet' id='bootstrap-css' href='http://www.fontawesome.com.cn/wp-content/themes/deeptimes/assets/bootstrap/css/bootstrap.min.css'
+  <link rel='stylesheet' id='bootstrap-css'
+    href='http://www.fontawesome.com.cn/wp-content/themes/deeptimes/assets/bootstrap/css/bootstrap.min.css'
     type='text/css' media='all' />
-  <link rel='stylesheet' id='font-awesome-css' href='http://www.fontawesome.com.cn/wp-content/themes/deeptimes/fonts/font-awesome/css/font-awesome.min.css'
+  <link rel='stylesheet' id='font-awesome-css'
+    href='http://www.fontawesome.com.cn/wp-content/themes/deeptimes/fonts/font-awesome/css/font-awesome.min.css'
     type='text/css' media='all' />
 
   <!-- Demo styles -->
   <style>
-    * { touch-action: pan-y; } 
-	
-    html, body {
+    * {
+      touch-action: pan-y;
+    }
+
+    html,
+    body {
       position: relative;
       height: 100%;
     }
+
     body {
       background: #eee;
       font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
       font-size: 14px;
-      color:#000;
+      color: #000;
       margin: 0;
       padding: 0;
     }
+
     .swiper-container {
       width: 100%;
       height: 100%;
     }
+
     .swiper-slide {
       text-align: center;
       font-size: 18px;
@@ -60,68 +68,94 @@
       -webkit-align-items: center;
       align-items: center;
     }
+
     .swiper-pagination-bullet {
       width: 20px;
       height: 20px;
       text-align: center;
       line-height: 20px;
       font-size: 12px;
-      color:#000;
+      color: #000;
       opacity: 1;
-      background: rgba(0,0,0,0.2);
+      background: rgba(0, 0, 0, 0.2);
     }
+
     .swiper-pagination-bullet-active {
-      color:#fff;
+      color: #fff;
       background: #007aff;
     }
 
-    .audio-active{
+    .audio-active {
       color: #15afef
     }
-	
-	
-	.main-front{
 
-	}
-	 .clear{
-        clear:both;
+    .clear {
+      clear: both;
     }
-	.right {
-            background-color: #808080;
-            width: 150px;
-            float: right;
-        }
 
-/*竖屏*/
-@media only screen and (orientation:portrait) {
-	/*body *{ display:none !important;}
+    .right {
+      background-color: #808080;
+      width: 150px;
+      float: right;
+    }
+
+    .full-page {
+      width: 100%;
+      height: 100%;
+    }
+
+    .health-bg-green {
+      background-color: #4d9250;
+    }
+
+    .line-front {
+      font-size: 30px;
+    }
+
+    /*竖屏*/
+    @media only screen and (orientation:portrait) {
+
+      /*body *{ display:none !important;}
 	body:after{ content:"现在是竖屏"; width:100%; height:100%; text-align:center; display:flex; align-items:center; justify-content:center;}*/
-  .imgdiv{
-    width:100%;
-    height: 50%;
-  }
-  .textdiv{
-    width:100%; 
-    height: 50%;
-    background-color:#4d9250;
-    padding: 40px 20px;
-  }
-}
-/*横屏*/
-@media only screen and (orientation:landscape) {
-	/*body *{ display:none !important;}
-body:after{ content:"现在是横屏"; width:100%; height:100%; text-align:center; display:flex; align-items:center; justify-content:center;}*/
-  .imgdiv{
-    float:left; width:50%;
-  }
-  .textdiv{
-    margin-left:50%; width:50%; 
-    background-color:#4d9250;
-    padding: 40px 20px;
-    height: 100%;
-  }
-}
+      .imgdiv {
+        width: 100%;
+        height: 50%;
+      }
 
+      .textdiv {
+        width: 100%;
+        height: 50%;
+        padding: 40px 20px;
+      }
+
+      .title {
+        font-size: 30px;
+        margin-top: 100px;
+      }
+    }
+
+    /*横屏*/
+    @media only screen and (orientation:landscape) {
+
+      /*body *{ display:none !important;}
+body:after{ content:"现在是横屏"; width:100%; height:100%; text-align:center; display:flex; align-items:center; justify-content:center;}*/
+      .imgdiv {
+        float: left;
+        width: 50%;
+      }
+
+      .textdiv {
+        margin-left: 50%;
+        width: 50%;
+        padding: 40px 20px;
+        height: 100%;
+      }
+
+      .title {
+        font-size: 30px;
+        margin-top: 50px;
+      }
+    }
   </style>
 </head>
 
@@ -129,22 +163,28 @@ body:after{ content:"现在是横屏"; width:100%; height:100%; text-align:cente
   <!-- Swiper -->
   <div class="swiper-container">
     <div class="swiper-wrapper">
-      
+
       <script type="text/template" id="myTemplate">
+        <div class="swiper-slide">
+			
+          <div class="full-page health-bg-green">
+            <div class="title">{{title}}</div>
+          </div>
+        </div>
 		{{#each result}} 
 		  <div class="swiper-slide">
 			
-			<div class="" style="width: 100%;height: 100%; ">
+			<div class="full-page" >
 				
 				<div  class="imgdiv">
 					<div style="width: 100%; height: 100%; overflow: hidden;">
 						<img style="width: auto; height: 100%; " src="p1.png"/>
 					</div>
 				</div>
-				<div style="" class="textdiv">
-					<span style="font-size: 30px;">{{en}}</span>
+				<div style="" class="textdiv health-bg-green">
+					<span class="line-front">{{en}}</span>
 					<span style="padding-left:15px; font-size: 24px;">
-						<a href="javascript:void(0);" class="mp3-play "><i class="fa fa-volume-up" aria-hidden="true"></i></a>
+						<a href="javascript:void(0);" class="mp3-play" data-s='{{s}}' data-e='{{e}}'><i class="audio-active fa fa-volume-up" aria-hidden="true"></i></a>
 					</span>
 				</div>
 				<div class="clear"></div>
@@ -167,52 +207,45 @@ body:after{ content:"现在是横屏"; width:100%; height:100%; text-align:cente
   <!-- Initialize Swiper -->
   <script>
     $(function () {
-      //$("#audio").attr("src", $("#audio").data("url"));
-       var audio = document.getElementById("audio");
-
-       $(document).on("click", ".mp3-play", function () {
-        
-        
-        if($("#audio").data('status')==='start'){
+      var audio = document.getElementById("audio");
+      var start, end;
+      audio.addEventListener("timeupdate", function () {
+        var value = audio.currentTime;
+        if (value >= end) {
           audio.pause();
-          $("#audio").data('status', 'stop'); 
-        }else{
+        }
+      });
+
+      $(document).on("click", ".mp3-play", function () {
+        start = $(this).data("s");
+        end = $(this).data("e");
+
+        if ($("#audio").data('status') === 'start') {
+          audio.pause();
+          $("#audio").data('status', 'stop');
+          $(this).find("i").removeClass("fa-volume-off").addClass("fa-volume-up");
+        } else {
+          audio.currentTime = start;
           audio.play();
           $("#audio").data('status', 'start');
+          $(this).find("i").removeClass("fa-volume-up").addClass("fa-volume-off");
         }
-        $(this).toggleClass("audio-active");
-        //$('video').trigger('pause');
+
       });
 
-      
-      $(document).on("click", ".main-content", function () {
-        $(this).toggleClass('big-main-content');
-        $(this).find("span.main-front").toggleClass('big-front');
-      });
-
-
-      $(document).on("click", ".inline-demo", function () {
-
-
-        return false;
-      });
-
-      //cnletter('国', 100, 100);
-
-      //中国、中间、中国、中间、中国、中间
       var data = {
-        result: [
-          { en: 'The rooster wakes up', mp3: 'audio/80s_vibe.mp3', cn: '汉族,汉室,汉化' },
-          { en: 'The cow wakes up', mp3: 'audio/80s_vibe.mp3', cn: '汉族,汉室,汉化' },
-          { en: 'The pig wakes up', mp3: 'audio/80s_vibe.mp3', cn: '汉族,汉室,汉化' },
-          { en: 'The horse wakes up', mp3: 'audio/80s_vibe.mp3', cn: '汉族,汉室,汉化' },
-          { en: 'The turkey wakes up', mp3: 'audio/80s_vibe.mp3', cn: '汉族,汉室,汉化' },
-          { en: 'The sheep wakes up', mp3: 'audio/80s_vibe.mp3', cn: '汉族,汉室,汉化' },
-          { en: 'The duck wakes up', mp3: 'audio/80s_vibe.mp3', cn: '汉族,汉室,汉化' },
-          { en: 'And the chick wakes up', mp3: 'audio/80s_vibe.mp3', cn: '汉族,汉室,汉化' }
+        title: 'waking up'
+        , result: [
+          { en: 'The rooster wakes up. Cock-a-doodle-doo!', s: '3', e: '7' },
+          { en: 'The cow wakes up. Moo, moo!', s: '7', e: '14' },
+          { en: 'The pig wakes up. Oink, oink!', s: '14', e: '20' },
+          { en: 'The horse wakes up. Neigh, neigh!', s: '20', e: '25' },
+          { en: 'The turkey wakes up. Gobble, gobble!', s: '25', e: '29' },
+          { en: 'The sheep wakes up. Baa, baa!', s: '29', e: '35' },
+          { en: 'The duck wakes up. Quack, quack!', s: '35', e: '40' },
+          { en: 'And the chick wakes up. Peep, peep!', s: '40', e: '45' }
         ]
       };
-
 
       var tpl = $("#myTemplate").html();
       //预编译模板
@@ -221,9 +254,6 @@ body:after{ content:"现在是横屏"; width:100%; height:100%; text-align:cente
       var html = template(data);
       //输入模板
       $('.swiper-wrapper').html(html);
-
-      var t = $(".main-front").first().text();
-
 
       var swiper = new Swiper('.swiper-container', {
         pagination: {
@@ -235,15 +265,7 @@ body:after{ content:"现在是横屏"; width:100%; height:100%; text-align:cente
           },
         },
         on: {
-          slideChange: function () {
-            var ele = $("#grid-background-target" + swiper.activeIndex);
-            var init = ele.data("init");
-            if (!init) {
-              var text = $(ele).parents('.swiper-slide').find('.main-content').find(".main-front").text();
-              $(ele).data('init', '1');
-            }
-            $(ele).css('width', '200px');
-          }
+          slideChange: function () {  }
         }
       });
 

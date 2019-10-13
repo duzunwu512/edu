@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>英语启蒙听力</title>
+  <!--<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">-->
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <link rel="icon" type="image/png" href="assets/amazeui/i/favicon.png">
+  <!-- Link Swiper's CSS -->
+  <link rel="stylesheet" href="assets/swiper/css/swiper.min.css" type='text/css'>
+  <link rel="stylesheet" href="http://cdn.clouddeep.cn/amazeui/1.0.1/css/amazeui.min.css" type='text/css'>
+
+  <link href="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.bootcss.com/font-awesome/5.10.2/css/all.min.css" rel="stylesheet">
+
+  <!-- Demo styles -->
+  <style>
+    * {
+      touch-action: pan-y;
+    }
+
+    html,
+    body {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      background: #eee;
+      font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+      font-size: 14px;
+      color: #000;
+      margin: 0;
+      padding: 0;
+    }
+    .active{
+            color: goldenrod;
+            font-size: 22px;
+        }
+    .full-page {
+      width: 100%;
+      height: 100%;
+    }
+    .health-bg-green {
+      background-color: #4d9250;
+      height: 100%;
+      width: 100%;
+    }
+
+    .title_level2 {
+        font-size: 24px;
+        padding-top: 20px;
+        text-align: center;
+      }
+    /*竖屏*/
+    @media only screen and (orientation:portrait) {
+       .en-text {
+        font-size: 20px;
+        padding: 20px 15px;
+      }
+    }
+
+    /*横屏*/
+    @media only screen and (orientation:landscape) {
+      .en-text {
+        font-size: 20px;
+        padding: 15px 20px;
+      }
+    }
+  </style>
+</head>
+    
+<body ontouchstart>
+    <div class="health-bg-green">
+        <script type="text/template" id="myTemplate">
+        <div class="title_level2">{{title}}</div>
+        <div class="en-text">
+            {{#each result}} 
+            <p class='line' data-start="{{s}}" data-end="{{e}}">{{en}}</p>
+            {{/each}}
+        </div>
+        </script>
+    </div>
+    <script src="../js/zepto.min.js"></script> 
+    <script src="data/edu.js"></script>
+    <script src="data/gk.js"></script>
+    <script src="https://cdn.bootcss.com/handlebars.js/4.2.0/handlebars.min.js"></script>
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>    
+
+<script>
+    var audio = new Audio();
+    document.addEventListener("WeixinJSBridgeReady", function () {
+        if (!!audio){
+            audio.src = db['data_'+getUrlParam('lv1_1')].audio_url;
+            audio.display='none';
+            audio.play();
+        }
+
+    }, false); 
+     
+
+    audio.addEventListener("timeupdate", function () { //播放时间改变   这个会一直打印
+        var value = audio.currentTime;
+        $(".line").removeClass("active");
+        $.each($(".line"), function(index, item){            
+            var start = $(this).data("start");
+            var end = $(this).data("end");
+            if(value>start && value<end){
+                $(item).addClass("active");
+            }
+        })
+    });
+    
+    $(function(){
+
+
+      var tpl = $("#myTemplate").html();
+      //预编译模板
+      var template = Handlebars.compile(tpl);
+      //匹配json内容
+      //var html = template(data);
+      var html = template(db['data_'+getUrlParam('lv1_1')]);
+      //输入模板
+      $('.health-bg-green').html(html);
+
+
+        $(".line").on("click", function(){
+            audio.currentTime = $(this).data("start");
+        });
+
+        $(".health-bg-green").on("click", function(){
+            if(audio.paused){
+                audio.play();
+            }else{
+                $(".line").removeClass("active");
+                audio.pause();
+            }
+        });
+
+        $("#forwardBtn").on("click", function(){
+            audio.currentTime = audio.currentTime+10;
+            audio.play();
+        });
+    
+        $("#backBtn").on("click", function(){
+            audio.currentTime = audio.currentTime-10;    
+        });
+        
+    });
+
+    </script>
+</body>
+</html>

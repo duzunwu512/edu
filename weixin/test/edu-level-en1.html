@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Swiper demo</title>
+  <title>幼儿英语启蒙</title>
   <!--<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">-->
   <meta name="description" content="">
   <meta name="keywords" content="">
@@ -16,12 +16,8 @@
   <link rel="stylesheet" href="assets/swiper/css/swiper.min.css" type='text/css'>
   <link rel="stylesheet" href="http://cdn.clouddeep.cn/amazeui/1.0.1/css/amazeui.min.css" type='text/css'>
 
-  <link rel='stylesheet' id='bootstrap-css'
-    href='http://www.fontawesome.com.cn/wp-content/themes/deeptimes/assets/bootstrap/css/bootstrap.min.css'
-    type='text/css' media='all' />
-  <link rel='stylesheet' id='font-awesome-css'
-    href='http://www.fontawesome.com.cn/wp-content/themes/deeptimes/fonts/font-awesome/css/font-awesome.min.css'
-    type='text/css' media='all' />
+  <link href="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.bootcss.com/font-awesome/5.10.2/css/all.min.css" rel="stylesheet">
 
   <!-- Demo styles -->
   <style>
@@ -184,7 +180,7 @@ body:after{ content:"现在是横屏"; width:100%; height:100%; text-align:cente
 				<div style="" class="textdiv health-bg-green">
 					<span class="line-front">{{en}}</span>
 					<span style="padding-left:15px; font-size: 24px;">
-						<a href="javascript:void(0);" class="mp3-play" data-s='{{s}}' data-e='{{e}}'><i class="audio-active fa fa-volume-up" aria-hidden="true"></i></a>
+						<a href="javascript:void(0);" class="mp3-play" data-s='{{s}}' data-e='{{e}}'><i class="audio-active fa fa-play" aria-hidden="true"></i></a>
 					</span>
 				</div>
 				<div class="clear"></div>
@@ -196,25 +192,35 @@ body:after{ content:"现在是横屏"; width:100%; height:100%; text-align:cente
     <!-- Add Pagination -->
     <div class="swiper-pagination"></div>
 
-    <div id="fmp_flash_div" style="display:none"><audio id="audio" src="01-waking-up.mp3"></audio></div>
+    <div id="fmp_flash_div" style="display:none"><audio id="audio"></audio></div>
   </div>
 
   <script src="assets/swiper/js/swiper.min.js"></script>
   <script src="../js/zepto.min.js"></script>
-
+  <script src="data/edu.js"></script>
+  <script src="data/gk.js"></script>
   <script src="https://cdn.bootcss.com/handlebars.js/4.2.0/handlebars.min.js"></script>
 
   <!-- Initialize Swiper -->
   <script>
     $(function () {
       var audio = document.getElementById("audio");
+      audio.src = db['data_'+getUrlParam('lv1_1')].audio_url;
       var start, end;
       audio.addEventListener("timeupdate", function () {
         var value = audio.currentTime;
         if (value >= end) {
           audio.pause();
+          $("#audio").data('status', 'stop');
+          $(".swiper-slide-active").find("a.mp3-play i").removeClass("fa-pause").addClass("fa-play");
+          /* auto play...
+          swiper.slideTo(swiper.activeIndex+1, 100, false);
+          start =  $(".swiper-slide-active").find("a.mp3-play").data("s");
+          end =  $(".swiper-slide-active").find("a.mp3-play").data("e");
+          */
         }
       });
+      
 
       $(document).on("click", ".mp3-play", function () {
         start = $(this).data("s");
@@ -223,35 +229,22 @@ body:after{ content:"现在是横屏"; width:100%; height:100%; text-align:cente
         if ($("#audio").data('status') === 'start') {
           audio.pause();
           $("#audio").data('status', 'stop');
-          $(this).find("i").removeClass("fa-volume-off").addClass("fa-volume-up");
+          $(this).find("i").removeClass("fa-pause").addClass("fa-play");
         } else {
           audio.currentTime = start;
           audio.play();
           $("#audio").data('status', 'start');
-          $(this).find("i").removeClass("fa-volume-up").addClass("fa-volume-off");
+          $(this).find("i").removeClass("fa-play").addClass("fa-pause");
         }
-
       });
 
-      var data = {
-        title: 'waking up'
-        , result: [
-          { en: 'The rooster wakes up. Cock-a-doodle-doo!', s: '3', e: '7' },
-          { en: 'The cow wakes up. Moo, moo!', s: '7', e: '14' },
-          { en: 'The pig wakes up. Oink, oink!', s: '14', e: '20' },
-          { en: 'The horse wakes up. Neigh, neigh!', s: '20', e: '25' },
-          { en: 'The turkey wakes up. Gobble, gobble!', s: '25', e: '29' },
-          { en: 'The sheep wakes up. Baa, baa!', s: '29', e: '35' },
-          { en: 'The duck wakes up. Quack, quack!', s: '35', e: '40' },
-          { en: 'And the chick wakes up. Peep, peep!', s: '40', e: '45' }
-        ]
-      };
+      //var dt=getUrlParam('lv1_1');
 
       var tpl = $("#myTemplate").html();
       //预编译模板
       var template = Handlebars.compile(tpl);
       //匹配json内容
-      var html = template(data);
+      var html = template(db['data_'+getUrlParam('lv1_1')]);
       //输入模板
       $('.swiper-wrapper').html(html);
 

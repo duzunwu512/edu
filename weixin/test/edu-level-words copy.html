@@ -18,7 +18,6 @@
 
   <link href="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdn.bootcss.com/font-awesome/5.10.2/css/all.min.css" rel="stylesheet">
-  <link href="https://cdn.bootcss.com/animate.css/3.7.2/animate.min.css" rel="stylesheet">
 
   <!-- Demo styles -->
   <style>
@@ -196,25 +195,22 @@ body:after{ content:"现在是横屏"; width:100%; height:100%; text-align:cente
 		{{#each result}} 
 		  <div class="swiper-slide">
 			
-			<div class="full-page health-bg-green " >
-        <div style="background:white; ">
-          <div class="imgdiv animated" data-ani-name="slideInLeft" data-ani-duration="0.5s" data-ani-delay="0s">
-            <div class="" style="width: 100%; height: 100%; overflow: hidden;">
-              <img style="width: auto; height: 100%; " src="p1.png"/>
-            </div>
+			<div class="full-page" >
+				
+				<div  class="imgdiv" data-ani-name="slideInLeft" data-ani-duration="1s" data-ani-delay="0s">
+					<div style="width: 100%; height: 100%; overflow: hidden;">
+						<img class="animated" style="width: auto; height: 100%; " src="p1.png"/>
+					</div>
+				</div>
+				<div style="" class="textdiv health-bg-green" data-ani-name="slideInRight" data-ani-duration="1s" data-ani-delay="0.3s">
+          <div><span class="line-front animated">{{en}}</span></div>
+          <div style="font-size:20px;"><span >{{cn}}</span></div>
+          <div style="padding-left:15px; font-size: 16px; margin-top: 20px;">
+            <span>
+                <span>英 </span><a href="javascript:void(0);" class="mp3-play" data-type='1'><i class="audio-active fa fa-play" aria-hidden="true"></i></a>
+                <span>美 </span><a href="javascript:void(0);" class="mp3-play" data-type='0'><i class="audio-active fa fa-play" aria-hidden="true"></i></a>
+            </span>            
           </div>
-        </div>
-				<div class="textdiv animated" data-ani-name="slideInRight" data-ani-duration="0.5s" data-ani-delay="0s">
-          <div>
-              <div><span class="line-front">{{en}}</span></div>
-              <div style="font-size:20px;"><span >{{cn}}</span></div>
-              <div style="padding-left:15px; font-size: 16px; margin-top: 20px;">
-                <span>
-                    <span>英 </span><a href="javascript:void(0);" class="mp3-play" data-type='1'><i class="audio-active fa fa-play" aria-hidden="true"></i></a>
-                    <span>美 </span><a href="javascript:void(0);" class="mp3-play" data-type='0'><i class="audio-active fa fa-play" aria-hidden="true"></i></a>
-                </span>            
-              </div>
-          </div>          
 				</div>
 				<div class="clear"></div>
 			</div>

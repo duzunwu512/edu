@@ -296,7 +296,7 @@ body:after{ content:"现在是横屏"; width:100%; height:100%; text-align:cente
                 animationControl.initAnimationItems();  // get items ready for animations
                 animationControl.playAnimation(this); // play animations of the first slide
               },
-              slideChangeTransitionStart: function () {     // on the last slide, hide .btn-swipe
+              slideChange: function () {     // on the last slide, hide .btn-swipe
                 animationControl.playAnimation(this);
               },
               slideChangeTransitionEnd: function () {       // play animations of the current slide

@@ -8,7 +8,9 @@
   <meta name="description" content="">
   <meta name="keywords" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-
+  <meta name="screen-orientation" content="portaint"><!--安卓机有用，苹果机没效果-->
+  <meta name="screen-orientation" content="portrait"><!-- uc强制竖屏 -->
+  <meta name="x5-orientation" content="portrait"><!-- QQ强制竖屏 -->
   <meta name="renderer" content="webkit">
   <meta http-equiv="Cache-Control" content="no-siteapp" />
   <link rel="icon" type="image/png" href="assets/amazeui/i/favicon.png">
@@ -24,6 +26,10 @@
   <style>
     * {
       touch-action: pan-y;
+      outline: none;
+      webkit-focus-ring-color: rgba(0, 0, 0, 0);
+      -webkit-tap-highlight-color: transparent;
+      -webkit-touch-callout: none;
     }
 
     html,
@@ -108,6 +114,7 @@
 
     .line-front {
       font-size: 40px;
+
     }
     .mp3-play{
       font-size: 16px;
@@ -142,14 +149,16 @@
 
       /*body *{ display:none !important;}
 	body:after{ content:"现在是竖屏"; width:100%; height:100%; text-align:center; display:flex; align-items:center; justify-content:center;}*/
-      .imgdiv {
-        width: 100%;
+      .imgdiv{
+        width: auto;
         height: 50%;
+      }
+      .imgdiv div, img{
+        height: 100%;
       }
 
       .textdiv {
         width: 100%;
-        height: 50%;
         padding: 20px 20px;
       }
 
@@ -166,12 +175,12 @@
 body:after{ content:"现在是横屏"; width:100%; height:100%; text-align:center; display:flex; align-items:center; justify-content:center;}*/
       .imgdiv {
         float: left;
+        height: 100%;
         width: 50%;
       }
 
       .textdiv {
         margin-left: 50%;
-        width: 50%;
         padding: 20px 20px;
         height: 100%;
       }
@@ -197,18 +206,16 @@ body:after{ content:"现在是横屏"; width:100%; height:100%; text-align:cente
 		  <div class="swiper-slide">
 			
 			<div class="full-page health-bg-green " >
-        <div style="background:white; ">
-          <div class="imgdiv animated" data-ani-name="slideInLeft" data-ani-duration="1s" data-ani-delay="0s">
-            <div class="" style="width: 100%; height: 100%; overflow: hidden;">
-              <img style="width: auto; height: 100%; " src="p1.png"/>
-            </div>
+        <div class="imgdiv" style="background:white; ">
+          <div class="animated" data-ani-name="slideInLeft" data-ani-duration="1s" data-ani-delay="0s">
+            <img  src="p1.png"/>
           </div>
         </div>
 				<div class="textdiv animated" data-ani-name="slideInRight" data-ani-duration="1s" data-ani-delay="0.3s">
-          <div>
+          <div style="font-weight: bold;">
               <div><span class="line-front">{{en}}</span></div>
-              <div style="font-size:20px;"><span >{{cn}}</span></div>
-              <div style="padding-left:15px; font-size: 16px; margin-top: 20px;">
+              <div style="font-size:24px;"><span >{{cn}}</span></div>
+              <div style="padding-left:15px; font-size: 20px; margin-top: 20px;">
                 <span>
                     <span>英 </span><a href="javascript:void(0);" class="mp3-play" data-type='1'><i class="audio-active fa fa-play" aria-hidden="true"></i></a>
                     <span>美 </span><a href="javascript:void(0);" class="mp3-play" data-type='0'><i class="audio-active fa fa-play" aria-hidden="true"></i></a>
@@ -300,7 +307,6 @@ body:after{ content:"现在是横屏"; width:100%; height:100%; text-align:cente
                 animationControl.playAnimation(this);
               },
               slideChangeTransitionEnd: function () {       // play animations of the current slide
-                console.log("ddddddddd:::TransitionEnd");
               },
               TouchStart: function (swiper, event) {    // mobile devices don't allow audios to play automatically, it has to be triggered by a user event(click / touch).
                   
@@ -310,7 +316,20 @@ body:after{ content:"现在是横屏"; width:100%; height:100%; text-align:cente
 
       $('.loading-overlay').slideUp();
 
+      window.addEventListener("onorientationchange" in window ? "orientationchange" : "resize", function() {
+         if (window.orientation === 180 || window.orientation === 0) {//竖屏状态
+          //console.log("vertical.........");
+          swiper.changeDirection();         
+         }          
+         if (window.orientation === 90 || window.orientation === -90 ){//横屏状态
+          //console.log("horizontal");
+          swiper.changeDirection();         
+         }      
+      }, false);  
+
     });
+
+
 
   </script>
 </body>

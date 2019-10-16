@@ -1,6 +1,6 @@
 var learn_tools = {
     title: '学习用品'
-    , result: [
+    , list: [
       { en: 'pen', cn:'钢笔', pic:'' },
       { en: 'pencil', cn:'铅笔' ,pic:''},
       { en: 'pencil-case', cn:'铅笔盒' ,pic:''},
@@ -12,7 +12,7 @@ var learn_tools = {
   };
   var body_parts = {
     title: '身体部位'
-    , result: [
+    , list: [
       { en: 'foot', cn:'脚' ,pic:''},
       { en: 'head', cn:'头' ,pic:''},
       { en: 'face', cn:'脸' ,pic:''},
@@ -27,7 +27,109 @@ var learn_tools = {
       { en: 'leg', cn:'腿' ,pic:''},
       { en: 'tail', cn:'尾巴' ,pic:''}
     ]
+  };
+
+  var number={
+    title: '数字Number'
+    , list:[
+      { en: '', cn:'' ,pic:''},
+    ]
+  };
+
+  var number={
+    title: '数字Number'
+    , list:[
+      { en: 'one', cn:'' ,pic:''},
+      { en: 'two', cn:'' ,pic:''},
+      { en: 'three', cn:'' ,pic:''},
+      { en: 'four', cn:'' ,pic:''},
+      { en: 'five', cn:'' ,pic:''},
+      { en: '', cn:'' ,pic:''},
+      { en: '', cn:'' ,pic:''},
+      { en: '', cn:'' ,pic:''},
+      { en: '', cn:'' ,pic:''},
+      { en: '', cn:'' ,pic:''},
+    ]
+  };
+
+  var number={
+    title: '数字Number'
+    , list:[
+      { en: '', cn:'' ,pic:''},
+      { en: '', cn:'' ,pic:''},
+      { en: '', cn:'' ,pic:''},
+      { en: '', cn:'' ,pic:''},
+      { en: '', cn:'' ,pic:''},
+      { en: '', cn:'' ,pic:''},
+      { en: '', cn:'' ,pic:''},
+      { en: '', cn:'' ,pic:''},
+      { en: '', cn:'' ,pic:''},
+      { en: '', cn:'' ,pic:''},
+    ]
   };  
+  var number={
+    title: '数字Number'
+    , list:[
+      { en: '', cn:'' ,pic:''},
+      { en: '', cn:'' ,pic:''},
+      { en: '', cn:'' ,pic:''},
+      { en: '', cn:'' ,pic:''},
+      { en: '', cn:'' ,pic:''},
+      { en: '', cn:'' ,pic:''},
+      { en: '', cn:'' ,pic:''},
+      { en: '', cn:'' ,pic:''},
+      { en: '', cn:'' ,pic:''},
+      { en: '', cn:'' ,pic:''},
+    ]
+  };
+  var number={
+    title: '数字Number'
+    , list:[
+      { en: '', cn:'' ,pic:''},
+      { en: '', cn:'' ,pic:''},
+      { en: '', cn:'' ,pic:''},
+      { en: '', cn:'' ,pic:''},
+      { en: '', cn:'' ,pic:''},
+      { en: '', cn:'' ,pic:''},
+      { en: '', cn:'' ,pic:''},
+      { en: '', cn:'' ,pic:''},
+      { en: '', cn:'' ,pic:''},
+      { en: '', cn:'' ,pic:''},
+    ]
+  };
+  var number={
+    title: '数字Number'
+    , list:[
+      { en: '', cn:'' ,pic:''},
+      { en: '', cn:'' ,pic:''},
+      { en: '', cn:'' ,pic:''},
+      { en: '', cn:'' ,pic:''},
+      { en: '', cn:'' ,pic:''},
+      { en: '', cn:'' ,pic:''},
+      { en: '', cn:'' ,pic:''},
+      { en: '', cn:'' ,pic:''},
+      { en: '', cn:'' ,pic:''},
+      { en: '', cn:'' ,pic:''},
+    ]
+  };
+  var number={
+    title: '数字Number'
+    , list:[
+      { en: '', cn:'' ,pic:''},
+      { en: '', cn:'' ,pic:''},
+      { en: '', cn:'' ,pic:''},
+      { en: '', cn:'' ,pic:''},
+      { en: '', cn:'' ,pic:''},
+      { en: '', cn:'' ,pic:''},
+      { en: '', cn:'' ,pic:''},
+      { en: '', cn:'' ,pic:''},
+      { en: '', cn:'' ,pic:''},
+      { en: '', cn:'' ,pic:''},
+    ]
+  };
+
+
+
 
   var db={
     data_lv1_1: learn_tools,

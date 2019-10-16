@@ -1,0 +1,934 @@
+TITLE 一、学习用品-schoolSupplies		
+bag 包	
+English book 英语书	
+pencil-case 文具盒
+pencil-box 铅笔盒
+book 书	
+magazine 杂志	
+post card 明信片
+calculator 计算器	
+math book 数学书	
+rubber  橡皮
+eraser 橡皮
+Chinese book 语文书	
+newspaper 报纸	
+ruler 尺子
+comic book 漫画书	
+notebook 笔记本	
+schoolbag 书包
+crayon 蜡笔	
+pen 钢笔	
+shanpener 卷笔刀
+dictionary 词典	
+pencil 铅笔	
+story-book 故事书
+		
+TITLE 二、人体/body-body		
+arm 手臂	
+hair 头发	
+nose 鼻子
+body 身体	
+hand 手	
+shoulder 肩膀
+ear 耳朵	
+head 头	
+stomach 胃
+eye 眼睛	
+knee 膝盖	
+tail 尾巴
+face 脸	
+leg 腿	
+toe 脚趾
+finger 手指	
+mouth 嘴	
+tooth(teeth) 牙齿
+foot 脚	
+neck 脖子	
+		
+TITLE 三、颜色/color-color		
+colour 颜色	
+yellow 黄	
+pink 粉红
+colourful 色彩丰富的	
+green 绿	
+purple 紫
+red 红	
+white 白	
+orange 橙
+blue 蓝	
+black 黑	
+brown 棕
+		
+TITLE 四、动物/animal-animal		
+ant 蚂蚁	
+fox 狐狸	
+pig 猪
+bear 熊	
+frog 青蛙	
+rabbit 兔子
+bee 蜜蜂	
+goat 山羊	
+shark 鲨鱼
+bird 鸟	
+hen 母鸡	
+sheep 绵羊
+butterfly 蝴蝶	
+horse 马	
+snail 蜗牛
+cat 猫	
+insect 昆虫	
+snake 蛇
+chick 小鸡	
+kangaroo 袋鼠	
+sperm whale 抹香鲸
+cock/rooster 公鸡	
+killer whale 虎鲸	
+squid 鱿鱼
+crow 乌鸦	
+koala 考拉	
+squirrel 松鼠
+deer 鹿	
+lion 狮子	
+tiger 老虎
+dog 狗	
+lobster 龙虾	
+turkey 火鸡
+donkey 驴	
+monkey 猴子	
+turtle 海龟
+dragonfly 蜻蜓	
+mouse 老鼠	
+whale 鲸鱼
+duck 鸭子	
+ox 公牛	
+wolf 狼
+elephant 大象	
+panda 熊猫	
+zebra 斑马
+fish 鱼		
+		
+TITLE 五、人物/people-people		
+aunt 阿姨	
+girl 女孩	
+neighbour 邻居
+baby 婴儿	
+grandma （外）祖母
+grandmother （外）祖母	
+parents 父母亲
+baseball player 棒球动物员	
+grandpa （外）祖父
+grandfather （外）祖父	
+pen pal 笔友
+boy 男孩	
+grandparents   （外）祖父母	
+people 人民
+brother 兄弟	
+kid 孩子，小孩	
+prince 王子
+child 孩子（单数）
+children 孩子们	
+lady 女士	
+queen 王后
+classmate 同学	
+man 男人	
+robot 机器人
+cousin （堂、表）兄弟姐妹	
+member 成员	
+sister 姐妹
+dad 爸爸
+papa 爸爸	
+Miss 小姐	
+son 儿子
+Father Christmas 圣诞老人	
+mom 妈妈
+mommy 妈妈	
+uncle 叔叔
+father 父亲	
+mother 母亲	
+visitor 旅行者
+friend 朋友	
+Mr 先生	
+woman 女人
+		
+TITLE 六、职业/job-job		
+accountant 会计	
+farmer 农民	
+salesperson 销售员
+actor （男）演员	
+mailman （男）邮递员	
+saleswoman （女）销售员
+actress （女）演员	
+mailperson （女）邮递员	
+singer 歌手
+artist 画家	
+manager 经理	
+student 学生
+assistant 售货员	
+nurse 护士	
+teather 老师
+boss 老板	
+policeman （男）警察	
+TV reporter 电视台记者
+cleaner 清洁工	
+policewoman （女）警察	
+university student 大学生 
+doctor 医生	
+principal 校长	
+worker 工人
+driver 司机	
+salesman （男）销售员	
+writer 作家
+engineer 工程师		
+		
+TITLE 七、食品/food-food		
+beef 牛肉	
+egg 鸡蛋	
+noodles 面条
+biscuit 饼干	
+fish 鱼	
+pork 猪肉
+bread 面包	
+french fries 薯条	
+pudding 布丁
+breakfast 早餐	
+hamburger 汉堡包	
+rice 米饭
+cake 蛋糕	
+hot dog 热狗	
+salad 沙拉
+cheese 奶酪	
+ice-cream 冰淇淋	
+sandwich 三明治
+chicken 鸡肉	
+jam 果酱	
+sausage 香肠
+chocolate 巧克力	
+lunch 午餐	
+sweet dumpling 汤圆
+cookie 曲奇	
+meat 肉	
+sweet 糖果
+dessert 点心	
+moon cake 月饼	
+tofu 豆腐
+dinner 晚餐	
+mutton 羊肉	
+zongzi 粽子
+dumpling 饺子		
+		
+TITLE 八、饮料-drink		
+coffee 咖啡	
+milk 牛奶	
+tea 茶
+Coke/Cola 可乐	
+soup 汤	
+water 水
+juice 果汁		
+		
+TITLE 九、蔬菜/vegetable-vegetable		
+cabbage 洋白菜	
+green beans 青豆	
+pumpkin 南瓜
+carrot 胡萝卜	
+onion 洋葱	
+sweet potato 红薯
+cucumber 黄瓜	
+pea 豌豆	
+tomato 西红柿
+eggplant 茄子	
+potato 土豆	
+turnip 萝卜
+		
+TITLE 十、水果/fruit-fruit		
+apple 苹果	
+grape 葡萄	
+peach 桃子
+banana 香蕉	
+lemon 柠檬	
+pear 梨
+blueberry 蓝莓	
+mandarin orange 桔子	
+strawberry 草莓
+cherry 樱桃	
+mango 芒果	
+watermelon 西瓜
+coconut 椰子	
+orange 橙子	
+		
+TITLE 十一、衣服/clothes-clothes		
+blouse 女式衬衫	
+jeans 牛仔裤	
+slippers 拖鞋
+boots 靴子	
+pants 长裤	
+sneakers 网球鞋
+cap 便帽	
+raincoat 雨衣	
+sock 袜子
+coat 上衣	
+sandals 凉鞋	
+sunglasses 太阳镜
+dress 连衣裙	
+scarf 围巾	
+sweater 毛衣
+glasses 眼镜	
+shirt 衬衫	
+tie 领带
+gloves 手套	
+shoe 鞋	
+trousers 裤子
+hat （有沿的）帽子	
+shorts 短裤	
+T-shirt T恤衫
+jacket 夹克衫	
+skirt 短裙子	
+		
+TITLE 十二、交通工具/vehicles-vehicles		
+bike 自行车	
+motor cycle 摩托车	
+taxi 出租车
+boat 小船	
+plane 飞机	
+train 火车
+bus 公共汽车	
+ship 轮船	
+van 小货车
+car 小汽车	
+subway 地铁	
+yacht 快艇
+jeep 吉普车		
+		
+TITLE 十三、杂物/other things-otherThings		
+air-conditioner 空调	
+fan 风扇	
+plate 盘子
+ball 球	
+floor 地板	
+pot 锅
+balloon 气球	
+football 足球	
+recycle bin 回收垃圾桶
+bed 床	
+fork 叉子	
+salt 盐
+beer can 啤酒罐	
+fridge 冰箱	
+shelf 书架
+board 写字板	
+hole 洞	
+sofa 沙发
+bottle 瓶子	
+jigsaw puzzle 拼图游戏	
+spoon 勺子
+bowl 碗	
+key 钥匙	
+sweet 糖
+box 盒子	
+kite 风筝	
+table 桌子
+chair 椅子	
+knife 刀	
+teacher's desk 讲台
+chart 图表	
+lamp 台灯	
+toothbrush 牙刷
+chopsticks 筷子	
+light 灯	
+toy 玩具
+closet 壁橱	
+lock 锁	
+traffic light 交通灯
+coap 肥皂	
+map 地图	
+trash bin 垃圾桶
+computer 计算机	
+medicine 药	
+tube 管子 
+cup 杯子	
+menu 菜单	
+TV 电视
+curtain 窗帘	
+mirror 镜子	
+umbrella 伞
+desk 课桌	
+money 钱	
+violin 小提琴
+doll 娃娃	
+nest 鸟窝	
+walkman 随身听
+door 门	
+persent/gift 礼物	
+wall 墙
+e-card 电子卡片	
+phone/telephone 电话	
+window 窗户
+e-mail 电子邮件	
+photo 照片	
+yo-yo 溜溜球
+end table 床头柜	
+picture 图画	
+zipper 拉链
+		
+TITLE 十四、地点/locations-locations		
+artroom 美术教室	
+flat/apartment 公寓	
+playground 操场
+attic 阁楼	
+fruit stand 水果摊	
+porch 门廊
+bank 银行	
+garage 车库	
+post office 邮局
+basement 地下室	
+garden 花园	
+room 房间
+bathroom 卫生间	
+gym 体育馆	
+school 学校
+bedroom 卧室	
+hall 走廊	
+science museum 科学博物馆
+bookstore 书店	
+home 家	
+stair 楼梯
+cabin 小木屋	
+hospital 医院	
+step 台阶
+canteen 食堂	
+hotel 旅馆	
+study 书房
+cinema 电影院	
+house 房子	
+supermarket 超市
+city 城市	
+kitchen 厨房	
+teacher's office 教师办公室
+classroom 教室	
+library 图书馆	
+the Great Wall 长城
+company 公司	
+living room 起居室	
+theme park 主题公园
+computer room 计算机教室	
+music room 音乐教室	
+TV room 电视机房
+country 国家	
+nature park 自然公园	
+village 乡村
+factory 工厂	
+park 公园	
+washroom 卫生间
+farm 农场	
+pet shop 宠物商店	
+zoo 动物园
+		
+TITLE 十五、课程/class-class		
+art 美术课	
+math 数学课	
+science 科学课
+Chinese 语文课	
+Moral Education 思想品德课	
+Social Studies 社会课
+computer 电脑课	
+music 音乐课	
+sport 体育运动
+English 英语课	
+P.E. 体育课	
+		
+TITLE 十六、国家、城市-city		
+China/PRC 中国	
+Canada/CAN 加拿大	
+Sydney 悉尼
+America/USA 美国	
+Australia 澳大利亚	
+Moscow 莫斯科
+UK 联合王国	
+New York 纽约	
+Cairo 开罗
+England 英国	
+London 伦敦	
+		
+TITLE 十七、气象/weather-weather		
+cloudy 多云的	
+rainy 下雨的	
+warm 温暖的
+cold 寒冷的	
+snowy 下雪的	
+weather report 天气预报
+cool 凉爽的	
+sunny 晴朗的	
+windy 有风的
+hot 炎热的		
+		
+TITLE 十八、节日/festival-festival
+Army Day 建军节	
+holiday 假日	
+My partner's birthday 我伙伴的生日
+Children's Day 儿童节	
+Mother's Day 母亲节	
+National Day 国庆节
+Christmas Day 圣诞节	
+My birthday 我的生日	
+New Year's Day 元旦
+Father's Day 父亲节	
+My father's birthday 我父亲的生日	
+Thankgiving 感恩节
+Halloween 万圣节前夕	
+My mother's birthday 我母亲的生日	
+Tree-planting Day 植树节
+		
+TITLE 十九、景物scenery-scenery		
+air 空气	
+path 小路	
+soil 土壤
+bridge 桥	
+rain 雨	
+star 星星
+building 建筑物	
+rainbow 彩虹	
+storm 暴风雨
+forest 森林	
+river 河流	
+stream 小溪
+house 房子	
+riverbank 河岸	
+street 街道
+lake 湖	
+road 公路	
+sun 太阳
+moon 月亮	
+sky 天空	
+wind 风
+mountain 山	
+sloud 云	
+woods 树林
+		
+TITLE 二十、植物/plant-plant		
+flower 花	
+seed 种子	
+leaf 叶子（单数）
+leaves 叶子（复数）
+grass 草	
+sprout 苗	
+bamboo 竹子
+tree 树	
+rose 玫瑰	
+		
+TITLE 二十一、时间/time	
+year 年
+January/Jan. 一月
+February/Feb. 二月
+March/Mar. 三月	
+April/Apr. 四月
+May 五月	
+June 六月	
+July 七月
+August/Aug. 八月
+September/Sept. 九月
+October/Oct. 十月
+November/Nov. 十一月
+December/Dec. 十二月
+season 季节
+spring 春天
+summer 夏天
+fall 秋天	
+winter 冬天
+week 星期
+Monday 星期一	
+Tuesday 星期二	
+Wednesday 星期三	
+Thursday 星期四	
+Friday 星期五
+Saturday 星期六	
+Sunday 星期日
+day 天
+today 今天
+tomorrow 明天
+morning 上午	
+noon 中午
+afternoon 下午	
+evening 晚上
+night 夜晚	
+hour 小时	
+minute 分钟	
+second 秒钟
+now 现在
+then 然后	
+
+TITLE 二十二、方位/position-position		
+along 沿着	
+left 左	
+right 右
+behind 在……后面	
+near 在……旁边	
+side 边
+beside 在……旁边	
+next to 与……相邻	
+east 东	
+south 南
+west 西
+north 北	
+under 在……下面
+in front of 在……前面	
+over  在……上面	
+in 在……里面		
+		
+TITLE 二十三、患病/illness-illness		
+have a cold 感冒	
+have a headache 头疼	
+have a toothache 牙疼
+have a fever 发烧	
+have a sore throat 喉咙疼	
+hurt 疼痛
+have a flu 流感	
+have a stomachache 胃疼	
+ill 生病的
+		
+TITLE 二十四、数量词/number-number
+one 一	
+two 二
+three 三
+four 四
+five 五
+six 六
+seven 七
+eight 八
+nine 九
+ten 十
+eleven 十一	
+twelve 十二
+thirteen 十三
+fourteen 十四
+fifteen 十五	
+sixteen 十六
+seventeen 十七
+eighteen 十八
+nineteen 十九
+twenty 二十
+thirty 三十
+forty 四十	
+fifty 五十	
+sixty 六十
+seventy 七十
+eighty 八十	
+ninety 九十	
+hundred 百	
+first 第一 
+second 第二
+third 第三
+fourth 第四
+fifth 第五 
+sixth 第六 
+seventh 第七 
+eighth 第八  
+ninth 第九  
+tenth 第十  
+eleventh 第十一
+twelfth 第十二
+twentigth 第二十
+		
+a bag of 一包	
+a bar of 一打
+a bottle of 一瓶
+a bowl of 一碗	
+a box of 一盒	
+a cup of 一杯	
+a drop of 一滴	
+a glass of 一玻璃杯	
+a pair of 一双	
+a piece of 一片	
+a pound of 一磅	
+		
+TITLE 二十五、形容词/adjective-adjective		
+active 积极活跃的	
+good 好的	
+sad 忧愁的
+angry 生气的	
+great 很好的	
+salty 咸的
+beautiful 漂亮的	
+happy 高兴的	
+short 短的/矮的
+best 最好的	
+healthy 健康的	
+shorter 更短的/更矮的
+better 更好的	
+heavier 更重的	
+sick 有病的
+big 大的	
+heavy 重的	
+small 小的
+bigger 更大的	
+helpful 有帮助的	
+smaller 更小的
+bored 无聊的	
+high 高的	
+smart 聪明的
+cheap 便宜的	
+higher 更高的	
+smell 难闻的
+clean 清洁的	
+hungry 饥饿的	
+sour 酸的
+coloured 着色的	
+ill 有病的	
+strict 严格的
+colourful 色彩鲜艳的	
+juicy 多汁的	
+strong 强壮的
+cool 顶好的/酷的	
+kind 积蓄可亲的	
+stronger 更强壮的
+cute 逗人喜爱的	
+little 小的	
+sweet 甜的
+dirty 脏的	
+long 长的	
+tall 高的
+easy 容易的	
+longer 更长的	
+taller 更高的
+enough 充足的	
+lovely 可爱的	
+tasty 好吃的
+excited 兴奋的	
+new 新的	
+tender 嫩的
+expensive 昂贵的	
+nice 好看的	
+thin 瘦的
+fat 肥胖的	
+old 年老的	
+thinner 更瘦的
+favourite 最喜爱的	
+older 更年老的	
+tired 累的
+fine 好的	
+pretty 漂亮的	
+young 年轻的
+fresh 新鲜的	
+proud 骄傲的	
+younger 更年轻的
+full 饱的	
+quiet 安静的	
+yummy 可口的
+funny 滑稽的	
+right 对的	
+		
+TITLE 二十六、代词		
+I 我（主格）	
+its 它的（名词性物主代词）	
+this 这个
+always 一直	
+itself 它自己	
+those 那些
+any 一些	
+mine 我的（名词性物主代词）	
+usually 通常
+anybody 任何人	
+my 我的（形容词性物主代词）	
+we 我们（主格）
+anyone 任何人	
+myself 我自己	
+what 什么
+anything 任何事、物	
+no 没有	
+what about 怎么样（问意见）
+he 他（主格）	
+no one 没有人	
+what colour 什么颜色
+her她（宾格）	
+nobody 没有人	
+what date 什么日期
+hers 她的（名词性物主代词）	
+nothing 没事、物	
+what day 哪天
+herself 她自己	
+often 经常	
+what for 为何目的（问目的）
+himself 他自己	
+oneself 某人自己	
+what size 什么号码
+his 他的（形容词性物主代词）	
+our 我们的（形容词性物主代词）	
+what time 什么时间
+how 怎样	
+ours 我们的（名词性物主代词）	
+when 什么时候
+how about 怎么样（问意见）	
+ourselves 我们自己	
+where 哪里（问地点）
+how big 多大	
+own 我自己的	
+which 哪一个
+how far 多远	
+she 她	
+who 谁（问主语）
+how heavy 多重	
+some 一些	
+whom 谁（问宾语）
+how large 多大面积	
+somebody 一些人	
+whose 谁的（问所有格）
+how long 多长	
+someone 一些人	
+why 为什么
+how many 多少（问数量）	
+something 一些事、物	
+you 你、你们
+how much 多少（问价格）	
+that 那个	
+your你的、你们的（形容词性物主代词）
+how old 多大年龄	
+their 他们（宾格）	
+yours 你的、你们的（名词性物主代词）
+how tall 多高	
+theirs 他仌的（名词性物主代词）	
+yourself 你自己（单数）
+it 它	
+these 这些	
+yourselves 你们自己（复数）
+its 它的（形容词性物主代词）	
+they 他们（主格）	
+		
+TITLE 二十七、动词/verb-verb		
+answer the phone 接电话	
+go to the cinema 去看电影	
+separate 隔开
+become 变成	
+go 去	
+set the table 摆饭桌
+bounce 反弹	
+guess 猜	
+shear 剪
+buy 买	
+hanp up 挂起来	
+shine 照耀
+call 打电话	
+have a picnic 举行野餐	
+show 展示
+catch butterflies 捉蝴蝶	
+have English class 上英语课	
+sing 唱歌
+clean the bedroom 打扫卧室	
+have 吃，有	
+skate 滑冰
+clean the room 打扫房间	
+help 帮助	
+sleep 睡觉
+clean 打扫	
+jump 跳	
+smell 闻
+climb mountain 爬山	
+kick 踢	
+stop 停止
+climb 爬	
+learn 学习	
+study 学习
+close 关闭	
+leave 离开	
+sweep the floor 扫地
+collect insects 收集昆虫	
+like 喜欢，像	
+swim 游泳
+collect leaves 收集树叶	
+listen to music 听音乐	
+swing 荡秋千
+collect stamps 收集邮票	
+live 居住	
+switch off 关闭
+cook dinner 做饭	
+look 看	
+switch 转换
+cook the meals 做饭	
+love 爱	
+take a trip 旅行
+count insects 数昆虫	
+make a snowman 堆雪人	
+take off 脱下
+dance 跳舞	
+make kites 制作风筝	
+take pictures 拍照
+do homework 做作业	
+make the bed 铺床	
+take 买，带走
+do housework 做家务	
+meet 遇见	
+taste 品尝
+do morning exercise 晨练	
+meet 遇见	
+teach 教
+do the dishes 洗碗碟	
+milk 挤牛奶	
+tell 告诉
+draw pictures 画画	
+open 打开	
+thank 谢谢
+drink water 喝水 	
+paint 绘画	
+think 思考
+drink 喝	
+pass 传递	
+turn off 关闭
+drive 驾驶	
+plant trees 种树	
+turn on 打开
+eat breakfast 吃早餐	
+play chess 下棋	
+turn 转弯
+eat dinner 吃晚饭	
+play computer games 玩电脑游戏	
+use a computer 使用计算机
+eat 吃	
+play sports 做运动	
+use 使用
+empty the trash 倒垃圾	
+play the piano 弹钢琴	
+visit grandparents 看望（外）祖父母
+fall 落下	
+play the violin 拉小提琴	
+wait 等
+feed 喂养	
+play 玩，踢	
+wake up 醒来
+feel 感觉到	
+put away the clothes 收拾衣服	
+walk 走
+fight 打架	
+put on 穿上	
+wash the clothes 洗衣服
+find 寻找	
+put 放置	
+wash 洗
+fly kites 放风筝	
+read a book 读书	
+watch insects 观察昆虫
+fly 飞	
+read a magezine 阅读杂志	
+watch TV 看电视
+fold 折叠	
+read books 读书	
+water the flowers 浇花
+get off 下车	
+read 读	
+wear 穿
+get to 到达	
+ride a bike 骑自行车	
+welcome 欢迎
+get up 起床	
+ride 骑	
+work 工作
+go hiking 去远足	
+rinse off 洗去	
+write a letter 写信
+go home 回家	
+rinse 漂洗	
+write a report 写报告
+go shopping 去购物	
+row 划	
+write an e-mail 写电子邮件
+go to bed 上床睡觉	
+run 跑	
+write 写
+go to school 去上学	
+send 送，寄	

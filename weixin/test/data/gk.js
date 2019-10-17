@@ -1016,7 +1016,7 @@ var data_1 = {
   
 /************DB***************/
  var db={
-    data_lv1_1: data_01,
+    data_lv1_1: data_1,
 	data_lv1_2: data_02,
 	data_lv1_3: data_03,
 	data_lv1_4: data_04,

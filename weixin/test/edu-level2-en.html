@@ -18,44 +18,9 @@
 
   <link href="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdn.bootcss.com/font-awesome/5.10.2/css/all.min.css" rel="stylesheet">
-
+  <link href="assets/edu.css" rel="stylesheet">
   <!-- Demo styles -->
   <style>
-    * {
-      touch-action: pan-y;
-    }
-
-    html,
-    body {
-      position: relative;
-      width: 100%;
-      height: 100%;
-      background: #eee;
-      font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-      font-size: 14px;
-      color: #000;
-      margin: 0;
-      padding: 0;
-    }
-    .active{
-            color: goldenrod;
-            font-size: 22px;
-        }
-    .full-page {
-      width: 100%;
-      height: 100%;
-    }
-    .health-bg-green {
-      background-color: #4d9250;
-      height: 100%;
-      width: 100%;
-    }
-
-    .title_level2 {
-        font-size: 24px;
-        padding-top: 20px;
-        text-align: center;
-      }
     /*竖屏*/
     @media only screen and (orientation:portrait) {
        .en-text {
@@ -105,12 +70,12 @@
 
     audio.addEventListener("timeupdate", function () { //播放时间改变   这个会一直打印
         var value = audio.currentTime;
-        $(".line").removeClass("active");
+        $(".line").removeClass("line_active");
         $.each($(".line"), function(index, item){            
             var start = $(this).data("start");
             var end = $(this).data("end");
             if(value>start && value<end){
-                $(item).addClass("active");
+                $(item).addClass("line_active");
             }
         })
     });
@@ -136,7 +101,7 @@
             if(audio.paused){
                 audio.play();
             }else{
-                $(".line").removeClass("active");
+                $(".line").removeClass("line_active");
                 audio.pause();
             }
         });

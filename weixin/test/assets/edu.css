@@ -87,7 +87,6 @@
 
   .line-front {
     font-size: 40px;
-
   }
   .mp3-play{
     font-size: 16px;
@@ -156,3 +155,24 @@ font-size: 1.5rem;
       transform: translate3d(-50%, -50%, 0);
   }
 }
+
+.play-btn{
+    padding-left:15px; 
+    font-size: 24px; 
+    background: none;
+    border:none;
+  }
+
+  span.activeSpan{
+    background: chocolate;
+  }
+  .line_active{
+    color: goldenrod;
+    font-size: 24px;
+}
+
+.title_level2 {
+    font-size: 24px;
+    padding-top: 20px;
+    text-align: center;
+  }

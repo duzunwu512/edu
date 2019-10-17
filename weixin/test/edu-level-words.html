@@ -152,6 +152,7 @@
       .imgdiv{
         width: auto;
         height: 50%;
+        background:white;
       }
       .imgdiv div, img{
         height: 100%;
@@ -160,6 +161,10 @@
       .textdiv {
         width: 100%;
         padding: 20px 20px;
+      }
+
+      .text-only {
+        margin-top: 150px;
       }
 
       .title {
@@ -177,6 +182,7 @@ body:after{ content:"现在是横屏"; width:100%; height:100%; text-align:cente
         float: left;
         height: 100%;
         width: 50%;
+        background:white;
       }
 
       .textdiv {
@@ -184,11 +190,18 @@ body:after{ content:"现在是横屏"; width:100%; height:100%; text-align:cente
         padding: 20px 20px;
         height: 100%;
       }
-
+      .text-only {
+        margin-top: 50px;
+        padding: 20px 20px;
+        height: 100%;
+      }
       .title {
         font-size: 30px;
         margin-top: 50px;
       }
+    }
+    .textdiv div{
+      font-weight: bold;
     }
   </style>
 </head>
@@ -204,15 +217,16 @@ body:after{ content:"现在是横屏"; width:100%; height:100%; text-align:cente
       <script type="text/template" id="myTemplate">
 		{{#each list}} 
 		  <div class="swiper-slide">
-			
 			<div class="full-page health-bg-green " >
-        <div class="imgdiv" style="background:white; ">
+        {{#if pic}}
+        <div class="imgdiv ">
           <div class="animated" data-ani-name="slideInLeft" data-ani-duration="1s" data-ani-delay="0s">
             <img  src="p1.png"/>
           </div>
         </div>
-				<div class="textdiv animated" data-ani-name="slideInRight" data-ani-duration="1s" data-ani-delay="0.3s">
-          <div style="font-weight: bold;">
+        {{/if}}
+				<div class="animated  {{#if pic}} textdiv {{else}}text-only {{/if}}" data-ani-name="slideInRight" data-ani-duration="1s" data-ani-delay="0.3s">
+          <div>
               <div><span class="line-front">{{en}}</span></div>
               <div style="font-size:24px;"><span >{{cn}}</span></div>
               <div style="padding-left:15px; font-size: 20px; margin-top: 20px;">
@@ -292,7 +306,8 @@ body:after{ content:"现在是横屏"; width:100%; height:100%; text-align:cente
             },
             pagination: {
               el: '.swiper-pagination',
-              clickable: true,          
+              clickable: true,   
+              type: 'fraction',       
               //dynamicBullets: true,
               renderBullet: function (index, className) {
                 return '<span class="' + className + '">' + (index + 1) + '</span>';
@@ -316,7 +331,7 @@ body:after{ content:"现在是横屏"; width:100%; height:100%; text-align:cente
 
       $('.loading-overlay').slideUp();
 
-      window.addEventListener("onorientationchange" in window ? "orientationchange" : "resize", function() {
+      /* window.addEventListener("onorientationchange" in window ? "orientationchange" : "resize", function() {
          if (window.orientation === 180 || window.orientation === 0) {//竖屏状态
           //console.log("vertical.........");
           swiper.changeDirection();         
@@ -325,7 +340,7 @@ body:after{ content:"现在是横屏"; width:100%; height:100%; text-align:cente
           //console.log("horizontal");
           swiper.changeDirection();         
          }      
-      }, false);  
+      }, false);  */
 
     });
 

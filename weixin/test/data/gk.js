@@ -150,7 +150,6 @@ var data_1 = {
   
   var data_10 = {
     title: 'Mop'
-    title: 'Mop'
     ,audio_url: '01-waking-up.mp3'
     , result: [
       { en: '“Come here, Mop,” Jill said. But Mop did not come.', s: '', e: '', pic:'' },
@@ -903,8 +902,7 @@ var data_1 = {
     ]
   }; 
   var data_63 = {
-    title: 'Playing with Blocks
-by Beth Frances	'
+    title: 'Playing with Blocks by Beth Frances	'
     ,audio_url: '01-waking-up.mp3'
     , result: [
       { en: '“Look at the house. I made it with the blocks,” said Pam.', s: '', e: '', pic:'' },
@@ -1088,4 +1086,4 @@ by Beth Frances	'
 	data_lv1_68: data_68,
 	data_lv1_69: data_69,
 	data_lv1_70: data_70
-  };
+};

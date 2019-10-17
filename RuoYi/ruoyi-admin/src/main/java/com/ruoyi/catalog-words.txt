@@ -514,7 +514,7 @@ bamboo 竹子
 tree 树	
 rose 玫瑰	
 		
-TITLE 二十一、时间/time	
+TITLE 二十一、时间/time-time	
 year 年
 January/Jan. 一月
 February/Feb. 二月
@@ -715,7 +715,7 @@ yummy 可口的
 funny 滑稽的	
 right 对的	
 		
-TITLE 二十六、代词		
+TITLE 二十六、代词/pronoun-pronoun		
 I 我（主格）	
 its 它的（名词性物主代词）	
 this 这个
@@ -737,7 +737,7 @@ what about 怎么样（问意见）
 he 他（主格）	
 no one 没有人	
 what colour 什么颜色
-her她（宾格）	
+her 她（宾格）	
 nobody 没有人	
 what date 什么日期
 hers 她的（名词性物主代词）	
@@ -778,7 +778,7 @@ something 一些事、物
 you 你、你们
 how much 多少（问价格）	
 that 那个	
-your你的、你们的（形容词性物主代词）
+your 你的、你们的（形容词性物主代词）
 how old 多大年龄	
 their 他们（宾格）	
 yours 你的、你们的（名词性物主代词）

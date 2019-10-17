@@ -31,6 +31,7 @@ public class WordGenerate {
 				while((line = br.readLine())!=null) {
 					if(line.startsWith("TITLE")) {
 						title = line.trim().replace("TITLE ", "");
+						System.out.println("title::"+title);
 						list.add(title);
 						tmplist = new ArrayList<String>();
 						subMap.put(title, tmplist);
@@ -83,7 +84,7 @@ public class WordGenerate {
 						System.out.println("line::"+line);
 						tmp = line.substring(0, line.lastIndexOf(" "));
 						obj.put("en", tmp.trim());
-						obj.put("pic", tmp.trim());
+						obj.put("pic", "");
 						array.add(obj);
 					}
 					jsonObj.put("list", array);
@@ -104,7 +105,7 @@ public class WordGenerate {
 	public static void main(String[] args) {
 		System.out.println("sssssssssssss");
 		List<String> list = new ArrayList<String>();
-		Map<String, List<String>> data = readFile("E:\\work\\edu\\tmp.txt", list);
+		Map<String, List<String>> data = readFile("G:\\project\\code\\RuoYi\\ruoyi-admin\\src\\main\\java\\com\\ruoyi\\catalog-words.txt", list);
 		writeJson(data, list);
 	}
 

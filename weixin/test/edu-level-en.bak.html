@@ -13,8 +13,6 @@
   <meta http-equiv="Cache-Control" content="no-siteapp" />
   <link rel="icon" type="image/png" href="assets/amazeui/i/favicon.png">
   <!-- Link Swiper's CSS -->
-  <link rel="stylesheet" href="assets/swiper/css/swiper.min.css" type='text/css'>
-  <link rel="stylesheet" href="http://cdn.clouddeep.cn/amazeui/1.0.1/css/amazeui.min.css" type='text/css'>
 
   <link href="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdn.bootcss.com/font-awesome/5.10.2/css/all.min.css" rel="stylesheet">
@@ -47,8 +45,10 @@ body{
     -o-transition: top .4s;
     transition: top .4s;
     overflow: scroll;
-    padding: 30px 10px;
-    position: relative;
+    padding-top: 80px;
+		position: relative;
+    margin-bottom: 0;
+    padding-left: 0;
   }
   li{
     text-align: center;
@@ -78,7 +78,13 @@ body{
 	-webkit-box-flex: 1;
 }
 
-  
+ .mui-scroll {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+} 
 
 
     .line-front {
@@ -90,23 +96,22 @@ body{
     @media only screen and (orientation:portrait) {
       .imgdiv {
         width: 100%;
+		    position: absolute;
+        left: 0;
+        width: 100%;
+        z-index: 999;
         overflow: hidden; text-align: center;
-        position: fixed;
-        top: 0px;
-        height: 160px;
-        background: white;
+		    background: white;
       }
 
-      .imgdiv img{
-        width: auto; 
-        height: 100%;
-      }
-
-      .textdiv {
-        width: 100%;     
-        overflow: scroll;
-        position: absolute;
-        top: 161px;
+      .textdiv {		
+        z-index: 2;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+	      position: absolute;
+		    top: 161px;
       }
 
       .title {
@@ -122,7 +127,6 @@ body{
         width: 50%;
         overflow: hidden; 
         text-align: center;
-        background: white;
       }
       .imgdiv img{
         width: 100%; 
@@ -140,6 +144,19 @@ body{
         margin-top: 50px;
       }
     }
+
+
+    .video-comment-list {
+    top: 210px;
+}
+.mui-table-view {
+    position: relative;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 0;
+    list-style: none;
+    background-color: #fff;
+}
   </style>
 </head>
 
@@ -148,11 +165,15 @@ body{
 			<div class="full-page" >
 				
 				<div  class="imgdiv">
-						<img src="p1.png"/>
-            <audio id="audio" src="../audio/res/pxyz.mp3" loop controls autoplay></audio><audio id="wordAudio"></audio>
+						<img src="p1.png" width="100%" height="160" style="object-fit:cover;     width: auto;"/>
+            <!--<audio id="audio" src="../audio/res/pxyz.mp3" loop controls autoplay></audio><audio id="wordAudio"></audio>-->
+			      <audio id="audio" src="../audio/res/pxyz.mp3" ></audio><audio id="wordAudio"></audio>
 				</div>
-				<div class="textdiv health-bg-green scrollable" id="scrollable">
-					<ul id="lyricContainer"></ul>
+				<div class="textdiv health-bg-green video-comment-list" id="" >
+					<div class="mui-scroll" style="transform: translate3d(0px, -30px, 0px) translateZ(0px); transition-duration: 0ms; transition-timing-function: cubic-bezier(0.1, 0.57, 0.1, 1);">
+						<ul id="lyricContainer" class="mui-table-view"></ul>
+					</div>
+					
 				</div>
 				<div class="clear"></div>
     <div id="fmp_flash_div" style="display:none"></div>
@@ -166,14 +187,12 @@ body{
   <script>
     $(function () {
       
-
       var m = new MusicPlayer({
         lyric: "../audio/res/pxyz.lrc", //歌词文件地址，UTF-8编码，在file协议下会取不到
         container: "#lyricContainer", //歌词渲染容器
         audio: '#audio', //绑定到的音频元素
         lyricChange: function(e){ //歌词状态改变时
           $('#lyricContainer').css('top', - e.target.position().top + 40);
-
         }
       });
 

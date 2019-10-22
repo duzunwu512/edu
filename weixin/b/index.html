@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Demo | lyrica.js</title>
+    <meta charset="UTF-8">
+    <style>
+        html, body, #wrapper {
+            margin: 0;
+            width: 100%;
+            height: 100%;
+            font-family: Verdana, Arial, "Microsoft YaHei", sans-serif;
+        }
+        body {
+            display: flex;
+        }
+        main {
+            margin: auto;
+            width: 480px;
+            height: 640px;
+            display: flex;
+            flex-direction: column;
+        }
+        audio {
+            width: 100%;
+            margin-bottom: 20px;
+            flex-shrink: 0;
+        }
+        #lyrica-wrap
+        {
+            flex-grow: 1;
+        }
+        .lyrica-inner p {
+            color: gray;
+        }
+        .lyrica-inner p.active {
+            font-weight: bold;
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+
+    <main>
+        <audio src="./assets/ShapeOfYou.mp3" controls>Your browser is soooooooooo outdated!</audio>
+        <div id="lyrica-wrap"></div>
+    </main>
+
+    <script src="./js/lyrica.js"></script>
+    <script>
+
+        function ajax(url, returnType) {
+            return new Promise(function(resolve, reject) {
+                let request = new XMLHttpRequest();
+                request.responseType = returnType;
+                request.onreadystatechange = function() {
+                    if (request.readyState === XMLHttpRequest.DONE) {
+                        if (request.status === 200) {
+                            resolve(request.response);
+                        }
+                        else {
+                            reject(Error(request.status));
+                            console.error('AJAX request to', url, 'failed. Got status', request.status);
+                        }
+                    }
+                };
+                request.onerror = function() {
+                    reject(Error("Network Error"));
+                    console.warn('AJAX request to', url, 'failed due to network error.');
+                };
+                request.open('GET', url);
+                request.send();
+            });
+        }
+
+        const lyrica = new Lyrica({
+            el: "#lyrica-wrap",
+            offsetTop: 50
+        });
+
+        const audio = document.querySelector('audio');
+        audio.addEventListener('timeupdate', function () { lyrica.update(audio.currentTime); });
+
+        Promise.all([
+            ajax('./assets/ShapeOfYou.lrc.txt', 'text')
+        ]).then(function (res) {
+            lyrica.load(res[0]);
+        });
+
+    </script>
+
+</body>
+
+</html>

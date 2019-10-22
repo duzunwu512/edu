@@ -81,12 +81,12 @@ public class WordGenerate {
 						obj = new JSONObject();
 						tmp = line.substring(line.lastIndexOf(" ")+1);
 						obj.put("cn", tmp.trim());
-						System.out.println("line::"+line);
 						tmp = line.substring(0, line.lastIndexOf(" "));
 						obj.put("en", tmp.trim());
 						obj.put("pic", "");
 						array.add(obj);
 					}
+					System.out.println("title:"+ titles[0]+" size:"+array.size());
 					jsonObj.put("list", array);
 					
 				}else {
@@ -96,7 +96,6 @@ public class WordGenerate {
 				parent.add(jsonObj);
 			}
 			
-			System.out.println("json:::"+parent.toString());
 		}
 	}
 	
@@ -182,10 +181,10 @@ public class WordGenerate {
 	public static void main(String[] args) {
 		System.out.println("sssssssssssss");
 		List<String> list = new ArrayList<String>();
-		/*Map<String, List<String>> data = readFile("G:\\project\\code\\RuoYi\\ruoyi-admin\\src\\main\\java\\com\\ruoyi\\catalog-words.txt", list);
-		writeJson(data, list);*/
+		Map<String, List<String>> data = readFile("G:\\project\\code\\RuoYi\\ruoyi-admin\\src\\main\\resources\\data\\catalog-words.txt", list);
+		writeJson(data, list);
 		
-		readNewStartFile("G:\\project\\code\\RuoYi\\ruoyi-admin\\src\\main\\resources\\data\\人教版新起点1-6年级单词表.txt");
+//		readNewStartFile("G:\\project\\code\\RuoYi\\ruoyi-admin\\src\\main\\resources\\data\\人教版新起点1-6年级单词表.txt");
 	}
 
 }

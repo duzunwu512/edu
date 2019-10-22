@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>幼儿英语启蒙</title>
+  <!--<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">-->
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <link rel="icon" type="image/png" href="assets/amazeui/i/favicon.png">
+  <!-- Link Swiper's CSS -->
+
+  <link href="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.bootcss.com/font-awesome/5.10.2/css/all.min.css" rel="stylesheet">
+  <link href="assets/edu.css" rel="stylesheet">
+  <!-- Demo styles -->
+  <style>
+
+    
+
+body{
+    font-family: '微软雅黑';
+    background-color: #F0F0F0;
+  }
+  #main{
+    margin: 40px auto;
+    width: 300px;
+    border: 1px solid #D6D6D6;
+    background-color: #FFFFFF;
+    border-radius: 3px;
+    box-shadow: 0 0 2px 1px #797979;
+  }
+  audio{
+    width: 100%;
+  }
+  
+  ul{
+    list-style: none;
+    padding: 0;
+    -webkit-transition: top .4s;
+    -o-transition: top .4s;
+    transition: top .4s;
+    overflow: scroll;
+        padding-top: 80px;
+		    position: relative;
+    margin-bottom: 0;
+    padding-left: 0;
+  }
+  li{
+    text-align: center;
+    font-size: 13px;
+    line-height: 26px;
+    transition: all .5s;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  li.active{
+    font-weight: bold;
+    font-size: 16px;
+    color: #89391F;
+  }
+  li:empty{
+    height: 26px;
+  }
+
+  .scrollable
+{
+	left: 0;
+	right: 0;
+	bottom: 0;
+	overflow-y: scroll;
+	-webkit-overflow-scrolling: touch;
+	-webkit-box-flex: 1;
+}
+
+ .mui-scroll {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+} 
+
+
+    .line-front {
+      font-size: 30px;
+    }
+    
+
+    /*竖屏*/
+    @media only screen and (orientation:portrait) {
+      .imgdiv {
+        width: 100%;
+		    position: absolute;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+        overflow: hidden; text-align: center;
+		background: white;
+      }
+
+      .textdiv {		
+    z-index: 2;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+	    position: absolute;
+		top: 161px;
+      }
+
+      .title {
+        font-size: 30px;
+        margin-top: 100px;
+      }
+    }
+
+    /*横屏*/
+    @media only screen and (orientation:landscape) {
+      .imgdiv {
+        float: left;
+        width: 50%;
+        overflow: hidden; 
+        text-align: center;
+      }
+      .imgdiv img{
+        width: 100%; 
+        height: auto;
+      }
+      .textdiv {
+        margin-left: 50%;
+        width: 50%;
+        height: 100%;
+        overflow: scroll;
+      }
+
+      .title {
+        font-size: 30px;
+        margin-top: 50px;
+      }
+    }
+  </style>
+</head>
+
+<body ontouchstart>
+			
+			<div class="full-page" >
+				
+				<div  class="imgdiv">
+						<img src="p1.png" width="100%" height="160" style="object-fit:cover;     width: auto;"/>
+            <!--<audio id="audio" src="../audio/res/pxyz.mp3" loop controls autoplay></audio><audio id="wordAudio"></audio>-->
+			<audio id="audio" src="../audio/res/pxyz.mp3" ></audio><audio id="wordAudio"></audio>
+				</div>
+				<div class="textdiv health-bg-green scrollable" id="scrollable" >
+					<div class="mui-scroll" style="transform: translate3d(0px, -30px, 0px) translateZ(0px); transition-duration: 0ms; transition-timing-function: cubic-bezier(0.1, 0.57, 0.1, 1);">
+						<ul id="lyricContainer"></ul>
+					</div>
+					
+				</div>
+				<div class="clear"></div>
+    <div id="fmp_flash_div" style="display:none"></div>
+  </div>
+  <script src="../js/zepto.min.js"></script>
+  <script src="data/edu.js"></script>
+  <script src="assets/lyric.js"></script>
+  <script src="https://cdn.bootcss.com/handlebars.js/4.2.0/handlebars.min.js"></script>
+
+  <!-- Initialize Swiper -->
+  <script>
+    $(function () {
+      
+      var m = new MusicPlayer({
+        lyric: "../audio/res/pxyz.lrc", //歌词文件地址，UTF-8编码，在file协议下会取不到
+        container: "#lyricContainer", //歌词渲染容器
+        audio: '#audio', //绑定到的音频元素
+        lyricChange: function(e){ //歌词状态改变时
+          $('#lyricContainer').css('top', - e.target.position().top + 40);
+        }
+      });
+
+
+      $(document).on("click", ".textdiv span, .title span", function () {
+        console.log("dddd");
+        var text = $(this).text();
+        if(text.indexOf(" ")){
+          text = text.split(" ")[0];
+        }
+        text = text.replace(/[,.!]/g, "");
+        wordAudio.pause();
+        wordAudio.src = 'http://dict.youdao.com/dictvoice?type=0&audio='+text;
+        wordAudio.play();
+      });
+      $(document).on("touchstart", ".textdiv span, .title span", function () {
+        $(this).addClass("activeSpan");
+      });
+      $(document).on("touchend", ".textdiv span, .title span", function () {
+        $(this).removeClass("activeSpan");
+      });
+
+      
+      new ScrollFix(document.getElementById("scrollable"));
+    });
+
+  var ScrollFix = function(elem) {
+	// Variables to track inputs
+	var startY, startTopScroll;
+	
+	elem = elem || document.querySelector(elem);
+	
+	// If there is no element, then do nothing	
+	if(!elem)
+		return;
+
+	// Handle the start of interactions
+	elem.addEventListener('touchstart', function(event){
+		startY = event.touches[0].pageY;
+		startTopScroll = elem.scrollTop;
+		
+		if(startTopScroll <= 0)
+			elem.scrollTop = 1;
+
+		if(startTopScroll + elem.offsetHeight >= elem.scrollHeight)
+			elem.scrollTop = elem.scrollHeight - elem.offsetHeight - 1;
+	}, false);
+};
+  </script>
+</body>
+
+</html>

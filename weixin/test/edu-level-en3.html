@@ -42,14 +42,25 @@ body{
   
   ul{
     list-style: none;
-    padding: 0;
     -webkit-transition: top .4s;
     -o-transition: top .4s;
     transition: top .4s;
     overflow: scroll;
     padding: 30px 10px;
-    position: relative;
+
+    position: absolute;
+
+	/* Prevent elements to be highlighted on tap */
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+
+	/* Put the scroller into the HW Compositing layer right from the start */
+	-webkit-transform: translateZ(0);
+	-moz-transform: translateZ(0);
+	-ms-transform: translateZ(0);
+	-o-transform: translateZ(0);
+	transform: translateZ(0);
   }
+
   li{
     text-align: center;
     font-size: 13px;
@@ -91,10 +102,10 @@ body{
       .imgdiv {
         width: 100%;
         overflow: hidden; text-align: center;
-        position: fixed;
-        top: 0px;
         height: 160px;
         background: white;
+        position: absolute;
+	      z-index: 2;
       }
 
       .imgdiv img{
@@ -104,9 +115,11 @@ body{
 
       .textdiv {
         width: 100%;     
-        overflow: scroll;
-        position: absolute;
-        top: 161px;
+        position: relative;
+        height: 100%;
+	overflow: hidden;
+
+        
       }
 
       .title {
@@ -151,16 +164,17 @@ body{
 						<img src="p1.png"/>
             <audio id="audio" src="../audio/res/pxyz.mp3" loop controls autoplay></audio><audio id="wordAudio"></audio>
 				</div>
-				<div class="textdiv health-bg-green scrollable" id="scrollable">
-					<ul id="lyricContainer"></ul>
+				<div class="textdiv health-bg-green scrollable wrapper" id="wrapper">
+					<ul id="lyricContainer" class="content"></ul>
 				</div>
 				<div class="clear"></div>
     <div id="fmp_flash_div" style="display:none"></div>
   </div>
-  <script src="../js/zepto.min.js"></script>
+  <script src="https://cdn.bootcss.com/zepto/1.2.0/zepto.min.js"></script>
   <script src="data/edu.js"></script>
   <script src="assets/lyric.js"></script>
-  <script src="https://cdn.bootcss.com/handlebars.js/4.2.0/handlebars.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/better-scroll"></script>
+
 
   <!-- Initialize Swiper -->
   <script>
@@ -172,7 +186,7 @@ body{
         container: "#lyricContainer", //歌词渲染容器
         audio: '#audio', //绑定到的音频元素
         lyricChange: function(e){ //歌词状态改变时
-          $('#lyricContainer').css('top', - e.target.position().top + 40);
+          //$('#lyricContainer').css('top', - e.target.position().top + 40);
 
         }
       });
@@ -195,32 +209,17 @@ body{
         $(this).removeClass("activeSpan");
       });
 
+      var wrapper = document.querySelector('.wrapper');
+      var scroll = new BScroll(wrapper,{
+        probeType:3,
+        click:true
+      });
+      scroll.on('touchEnd',function(pos){
+			  console.log("left touch end....");
+		  });
       
-      new ScrollFix(document.getElementById("scrollable"));
+
     });
-
-  var ScrollFix = function(elem) {
-	// Variables to track inputs
-	var startY, startTopScroll;
-	
-	elem = elem || document.querySelector(elem);
-	
-	// If there is no element, then do nothing	
-	if(!elem)
-		return;
-
-	// Handle the start of interactions
-	elem.addEventListener('touchstart', function(event){
-		startY = event.touches[0].pageY;
-		startTopScroll = elem.scrollTop;
-		
-		if(startTopScroll <= 0)
-			elem.scrollTop = 1;
-
-		if(startTopScroll + elem.offsetHeight >= elem.scrollHeight)
-			elem.scrollTop = elem.scrollHeight - elem.offsetHeight - 1;
-	}, false);
-};
   </script>
 </body>
 

@@ -11,7 +11,11 @@
     this.paused = false;
     if(typeof obj.lyricChange == 'function'){
       this.lyricChange = obj.lyricChange;
+    };
+    if(typeof obj.callback == 'function'){
+      this.callback = obj.callback;
     }
+
 
     var that = this;
     $.ajax({
@@ -54,7 +58,10 @@
     for(var x in lyric){
       $('<li/>').attr('data-time', x).text(lyric[x]).appendTo(this.lrcContainer);
     }
+    
     var that = this, nt = 0;
+    if(that.callback)  that.callback();  
+
     this.player.on('timeupdate', function(e){
       if(that.paused) return;
       var t = Math.floor(that.player[0].currentTime);

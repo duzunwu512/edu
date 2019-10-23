@@ -36,15 +36,14 @@ var data_1 = {
     e:'4'
     ,audio_url: config.rscurl+'gk/02-A-Rex.mp3'
     , result: [
-      { en: 'I like to swing.', s: '7', e: '11' , pic:  config.rscurl+'gk/02/01.jpg' },
-      { en: 'I like to run.', s: '15', e: '19' , pic:  config.rscurl+'gk/02/02.jpg' },
-      { en: 'I like to climb.', s: '21', e: '25' , pic:  config.rscurl+'gk/02/03.jpg' },
-      { en: 'I like to hang.', s: '28', e: '31' , pic:  config.rscurl+'gk/02/04.jpg' },
-      { en: 'I like to hang.', s: '43', e: '37' , pic:  config.rscurl+'gk/02/04.jpg' },
-      { en: 'I like to jump.', s: '40', e: '43' , pic:  config.rscurl+'gk/02/05.jpg' },
-      { en: 'I like to slide.', s: '40', e: '43' , pic:  config.rscurl+'gk/02/06.jpg' },
-      { en: 'I like to ride.', s: '45', e: '49' , pic:  config.rscurl+'gk/02/07.jpg' },
-      { en: 'I like to swim!', s: '51', e: '55' , pic:  config.rscurl+'gk/02/08.jpg' }
+      { en: 'I like to swing.', s: '6', e: '9' , pic:  config.rscurl+'gk/02/01.jpg' },
+      { en: 'I like to run.', s: '11', e: '14' , pic:  config.rscurl+'gk/02/02.jpg' },
+      { en: 'I like to climb.', s: '16', e: '18' , pic:  config.rscurl+'gk/02/03.jpg' },
+      { en: 'I like to hang.', s: '21', e: '23' , pic:  config.rscurl+'gk/02/04.jpg' },
+      { en: 'I like to jump.', s: '26', e: '28' , pic:  config.rscurl+'gk/02/05.jpg' },
+      { en: 'I like to slide.', s: '30', e: '33' , pic:  config.rscurl+'gk/02/06.jpg' },
+      { en: 'I like to ride.', s: '36', e: '38' , pic:  config.rscurl+'gk/02/07.jpg' },
+      { en: 'I like to swim!', s: '40', e: '43' , pic:  config.rscurl+'gk/02/08.jpg' }
     ]
   };
   

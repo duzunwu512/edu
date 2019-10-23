@@ -1,6 +1,6 @@
  var gk_list={titles:[
-  { url: 'lv1_1', title:'01 At The Market'},
-  { url: 'lv1_2', title:'02 Rex'},
+  	{ url: 'lv1_1', title:'01 At The Market'},
+  	{ url: 'lv1_2', title:'02 Rex'},
 	{ url: 'lv1_3', title:'03 Funny Things'},
 	{ url: 'lv1_4', title:'04 The Baby Animals'},
 	{ url: 'lv1_5', title:'05 Over The River'},

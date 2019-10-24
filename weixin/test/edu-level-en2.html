@@ -17,9 +17,12 @@
 </head>
 
 <body>
+	<div class="loading-overlay">
+		<img src="loading.svg">
+	</div>	
 	<div class="full-page">
-		<div id="header" class="imgdiv">
-			<img src="" />
+		<div id="header" class="imgdiv img_load">
+			<img/>
 			<div id="fmp_flash_div" style="display:none">
 				<audio id="audio"></audio>
 				<audio id="wordAudio"></audio>
@@ -40,9 +43,11 @@
 	<script src="https://cdn.bootcss.com/zepto/1.2.0/zepto.min.js"></script>
 	<script src="assets/fx.js"></script>
 	<script src="assets/fx_methods.js"></script>
+	<script src="assets/zepto-animate.js"></script>
+	<script src="assets/touch.js"></script>
 	<script src="assets/lyric.js"></script>
 	<script src="data/edu-level-en2.js"></script>
-
+	
 </body>
 
 </html>

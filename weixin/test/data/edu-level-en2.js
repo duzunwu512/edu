@@ -78,9 +78,36 @@ $(function () {
     play = !play;
     $(ele).find("i").removeClass("fa-play").addClass("fa-pause");
   }
-  function audioStop(){
+  function audioStop(ele){
     audio.pause();
     play = !play;
     $(ele).find("i").removeClass("fa-pause").addClass("fa-play");
   }
+
+  $('.loading-overlay').slideUp(200, function(){
+    $('.loading-overlay').css("display","none");
+    $('.img_load > img').attr("src", "p1.png");
+  });
+
+  $(document).on("click", "li", function(event){ 
+    if(audio.paused) {
+      audioStart($(".mp3-play"));
+    }else{
+      audio.currentTime = $(this).data("time");
+    }
+  });
+
+  $("#header").on("swipeUp", function(){
+    $(".imgdiv").animate({ height: 50 }, 300, 'linear', function() {
+    });
+    $("#wrapper").animate({ top: 50 }, 300, 'linear', function() {
+    });
+  });
+  $("#header").on("swipeDown", function(){
+    $(".imgdiv").animate({ height: 200 }, 300, 'linear', function() {
+    });
+    $("#wrapper").animate({ top: 200 }, 300, 'linear', function() {
+    });
+  });
+
 });

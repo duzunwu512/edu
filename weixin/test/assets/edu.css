@@ -178,3 +178,8 @@ font-size: 1.5rem;
     padding-top: 20px;
     text-align: center;
   }
+
+.img_load{
+  background:url('img/loading_big.gif') no-repeat center center;
+  background-size: 30px 30px;
+}

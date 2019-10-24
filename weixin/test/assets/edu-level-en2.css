@@ -67,7 +67,6 @@ li:empty {
     overflow: hidden;
     text-align: center;
     height: 200px;
-    background: white;
     position: absolute;
     z-index: 2;
   }
@@ -108,7 +107,6 @@ li:empty {
     height: 100%;
     overflow: hidden;
     text-align: center;
-    background: white;
   }
 
   .imgdiv img {

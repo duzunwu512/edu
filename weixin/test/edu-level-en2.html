@@ -9,158 +9,20 @@
 	<title>钦点小状元</title>
 	<link href="https://cdn.bootcss.com/font-awesome/5.10.2/css/all.min.css" rel="stylesheet">
 	<link href="assets/edu.css" rel="stylesheet">
-
-
+	<link href="assets/edu-level-en2.css" rel="stylesheet">
 	<style type="text/css">
 
-		ul {
-			list-style: none;
-			overflow: scroll;
-			text-align: left;
-			color: #eee;
-			padding: 0;
-			margin: 0;
-			border: 0;
-		}
-
-		li {
-			text-align: center;
-			transition: all .5s;
-			white-space: nowrap;
-			overflow: hidden;
-			text-overflow: ellipsis;
-			padding: 0 10px;
-			height: 40px;
-			line-height: 40px;
-			font-size: 18px;
-		}
-
-		li.active {
-			font-weight: bold;
-			font-size: 20px;
-			color: white;
-		}
-
-		li:empty {
-			height: 26px;
-		}
-
-		#header {
-			position: absolute;
-			z-index: 2;
-			top: 0;
-			left: 0;
-			line-height: 45px;
-			padding: 0;
-			font-size: 20px;
-			text-align: center;
-			font-weight: bold;
-		}
-
-
-		.scroller {
-			-webkit-transform: translateZ(0);
-			-moz-transform: translateZ(0);
-			-ms-transform: translateZ(0);
-			-o-transform: translateZ(0);
-			transform: translateZ(0);
-			-webkit-touch-callout: none;
-			-webkit-user-select: none;
-			-moz-user-select: none;
-			-ms-user-select: none;
-			user-select: none;
-			-webkit-text-size-adjust: none;
-			-moz-text-size-adjust: none;
-			-ms-text-size-adjust: none;
-			-o-text-size-adjust: none;
-			text-size-adjust: none;
-		}
-
-
-		/*竖屏*/
-		@media only screen and (orientation:portrait) {
-			.imgdiv {
-				width: 100%;
-				overflow: hidden;
-				text-align: center;
-				height: 200px;
-				background: white;
-				position: absolute;
-				z-index: 2;
-			}
-			.imgdiv img {
-				width: auto;
-				height: 100%;
-			}
-
-			.textdiv {
-				width: 100%;
-				position: absolute;
-				overflow: hidden;
-				top: 200px;
-				z-index: 1;
-				bottom: 0px;
-				left: 0;
-				background-color: #4d9250;
-			}
-
-			.textdiv ul {
-				position: absolute;
-				z-index: 1;
-				-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-				width: 100%;
-			}
-
-			.title {
-				font-size: 30px;
-				margin-top: 100px;
-			}
-		}
-
-		/*横屏*/
-		@media only screen and (orientation:landscape) {
-			.imgdiv {
-				float: left;
-				width: 40%;
-				height: 100%;
-				overflow: hidden;
-				text-align: center;
-				background: white;
-			}
-
-			.imgdiv img {
-				width: 100%;
-				height: auto;
-			}
-
-			.textdiv {
-				margin-left: 40%;
-				height: 100%;
-				overflow: scroll;
-				background-color: #4d9250;
-			}
-
-			.title {
-				font-size: 30px;
-				margin-top: 50px;
-			}
-		}
-
-		.imgdiv div.play-btn {
-			position: absolute;
-			left: 1px;
-			bottom: 5px;
-		}
+		
 	</style>
 </head>
 
 <body>
 	<div class="full-page">
 		<div id="header" class="imgdiv">
-			<img src="p1.png" />
+			<img src="" />
 			<div id="fmp_flash_div" style="display:none">
-				<audio id="audio" src="../audio/res/pxyz.mp3" loop controls autoplay></audio><audio
-					id="wordAudio"></audio>
+				<audio id="audio"></audio>
+				<audio id="wordAudio"></audio>
 			</div>
 			<div class="play-btn">
 				<a href="javascript:void(0);" class="mp3-play"><i class="fa fa-play" aria-hidden="true"></i></a>
@@ -176,82 +38,11 @@
 	<script src="https://cdn.bootcss.com/iScroll/5.2.0/iscroll.min.js"></script>
 	<script type="text/javascript" src="data/demoUtils.js"></script>
 	<script src="https://cdn.bootcss.com/zepto/1.2.0/zepto.min.js"></script>
+	<script src="assets/fx.js"></script>
+	<script src="assets/fx_methods.js"></script>
 	<script src="assets/lyric.js"></script>
-	<script type="text/javascript">
+	<script src="data/edu-level-en2.js"></script>
 
-		$(function () {
-
-			var audio_scroll_end = 0;
-			var play = false;
-
-			var m = new MusicPlayer({
-				lyric: "../audio/res/pxyz.lrc", //歌词文件地址，UTF-8编码，在file协议下会取不到
-				container: "#scroller", //歌词渲染容器
-				audio: '#audio', //绑定到的音频元素
-				lyricChange: function (e) { //歌词状态改变时
-					if (new Date().getTime() - audio_scroll_end > 1000 * 2) {
-						myScroll.scrollToElement(document.querySelector('#scroller .active'), 1200, null, -120, IScroll.utils.ease.circular)
-					}
-				},
-				callback: function () {
-					loaded();
-				}
-			});
-
-			$(document).on("click", ".textdiv span, .title span", function () {
-				var text = $(this).text();
-				if (text.indexOf(" ")) {
-					text = text.split(" ")[0];
-				}
-				text = text.replace(/[,.!]/g, "");
-				/*
-				wordAudio.pause();
-				wordAudio.src = 'http://dict.youdao.com/dictvoice?type=0&audio='+text;
-				wordAudio.play();
-				*/
-			});
-
-			var audio = document.getElementById("audio");
-			var wordAudio = document.getElementById("wordAudio");
-
-			$(document).on("touchstart", ".textdiv span, .title span", function () {
-				$(this).addClass("activeSpan");
-			});
-			$(document).on("touchend", ".textdiv span, .title span", function () {
-				$(this).removeClass("activeSpan");
-			});
-
-
-			var myScroll;
-			function loaded() {
-				myScroll = new IScroll('#wrapper', { mouseWheel: true, click: true });
-				myScroll.on("scrollEnd", function () {
-					audio_scroll_end = new Date().getTime();
-				});
-			}
-
-			document.addEventListener('touchmove', function (e) { e.preventDefault(); }, isPassive() ? {
-				capture: false,
-				passive: false
-			} : false);
-
-
-			$(document).on("click", ".mp3-play", function () {
-				//debugger;
-				if (play) {
-					audio.pause();
-					play = !play;
-					$(this).find("i").removeClass("fa-pause").addClass("fa-play");
-				} else {
-					audio.play();
-					play = !play;
-					$(this).find("i").removeClass("fa-play").addClass("fa-pause");
-				}
-			});
-		});
-
-
-	</script>
 </body>
 
 </html>

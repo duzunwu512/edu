@@ -56,11 +56,15 @@
     this.lyric = lyric;
     this.lrcContainer.html('');
     for(var x in lyric){
-      $('<li/>').attr('data-time', x).text(lyric[x]).appendTo(this.lrcContainer);
+      if(lyric[x].indexOf("->")>-1){
+        $('<li/>').attr('data-time', x).data('url', lyric[x].replace("->", "")).appendTo(this.lrcContainer);
+      }else{
+        $('<li/>').attr('data-time', x).text(lyric[x]).appendTo(this.lrcContainer);
+      }
     }
     
     var that = this, nt = 0;
-    if(that.callback)  that.callback();  
+    if(that.callback)  that.callback(this.player);  
 
     this.player.on('timeupdate', function(e){
       if(that.paused) return;

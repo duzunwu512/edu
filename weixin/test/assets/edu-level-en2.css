@@ -1,0 +1,136 @@
+ul {
+  list-style: none;
+  overflow: scroll;
+  text-align: left;
+  color: #eee;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+li {
+  text-align: center;
+  transition: all .5s;
+  white-space: normal;
+  overflow: hidden;
+  padding: 0 10px;
+  line-height: 40px;
+  font-size: 18px;
+}
+
+li.active {
+  font-weight: bold;
+  font-size: 20px;
+  color: white;
+}
+
+li:empty {
+  height: 26px;
+}
+
+#header {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  line-height: 45px;
+  padding: 0;
+  font-size: 20px;
+  text-align: center;
+  font-weight: bold;
+}
+
+
+.scroller {
+  -webkit-transform: translateZ(0);
+  -moz-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  -o-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-text-size-adjust: none;
+  -moz-text-size-adjust: none;
+  -ms-text-size-adjust: none;
+  -o-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+
+/*竖屏*/
+@media only screen and (orientation:portrait) {
+  .imgdiv {
+    width: 100%;
+    overflow: hidden;
+    text-align: center;
+    height: 200px;
+    background: white;
+    position: absolute;
+    z-index: 2;
+  }
+  .imgdiv img {
+    width: auto;
+    height: 100%;
+  }
+
+  .textdiv {
+    width: 100%;
+    position: absolute;
+    overflow: hidden;
+    top: 200px;
+    z-index: 1;
+    bottom: 0px;
+    left: 0;
+    background-color: #4d9250;
+  }
+
+  .textdiv ul {
+    position: absolute;
+    z-index: 1;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    width: 100%;
+  }
+
+  .title {
+    font-size: 30px;
+    margin-top: 100px;
+  }
+}
+
+/*横屏*/
+@media only screen and (orientation:landscape) {
+  .imgdiv {
+    float: left;
+    width: 40%;
+    height: 100%;
+    overflow: hidden;
+    text-align: center;
+    background: white;
+  }
+
+  .imgdiv img {
+    width: 100%;
+    height: auto;
+  }
+
+  .textdiv {
+    margin-left: 40%;
+    height: 100%;
+    overflow: scroll;
+    background-color: #4d9250;
+  }
+
+  .title {
+    font-size: 30px;
+    margin-top: 50px;
+  }
+}
+
+.imgdiv div.play-btn {
+  position: absolute;
+  left: 1px;
+  bottom: 5px;
+}

@@ -18,7 +18,7 @@ $(function () {
         lilast = $(e.target).prev(".validen").data("time");
         if(lilast){
           audio.pause();
-          setTimeout(currentText, (listart-lilast)*1000);
+          setTimeout(currentText, (listart-lilast+1)*1000);
         }
       }else{
         currentText();
@@ -33,13 +33,13 @@ $(function () {
   });
 
   function currentText(){
+    var url = $("#scroller .active").data("url");
+    if(url ){ //如果是图片，没有文字
+      $("#header > img").fadeOut(200, function(){
+        $("#header > img").attr("src", url).fadeIn(200);
+      });
+    }
     if (new Date().getTime() - audio_scroll_end > 1000 * 2) {//滑动2后才滚动当前li
-      var url = $("#scroller .active").data("url");
-      if(url ){ //如果是图片，没有文字
-        $("#header > img").fadeOut(200, function(){
-          $("#header > img").attr("src", url).fadeIn(200);
-        });
-      }
       myScroll.scrollToElement(document.querySelector('#scroller .active'), 1200, null, -120, IScroll.utils.ease.circular);
     }
     if(audio.paused){

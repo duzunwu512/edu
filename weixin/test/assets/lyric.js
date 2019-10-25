@@ -59,7 +59,7 @@
       if(lyric[x].indexOf("->")>-1){
         $('<li/>').attr('data-time', x).data('url', lyric[x].replace("->", "")).appendTo(this.lrcContainer);
       }else{
-        $('<li/>').attr('data-time', x).text(lyric[x]).appendTo(this.lrcContainer);
+        $('<li/>').attr('data-time', x).addClass("validen").text(lyric[x]).appendTo(this.lrcContainer);
       }
     }
     

@@ -25,6 +25,7 @@ $(function () {
       });
     }
   });
+  
 
   $(document).on("click", ".textdiv span, .title span", function () {
     var text = $(this).text();
@@ -40,6 +41,11 @@ $(function () {
   var audio = document.getElementById("audio");
   var wordAudio = document.getElementById("wordAudio");
   audio.src='data/15 A picnic in the rain.mp3';
+  audio.addEventListener("canplay", function() {
+    $(".mp3-play i").removeClass("icon-refresh icon-spin").addClass("fa fa-play");
+    }
+  );
+
 
 
   $(document).on("touchstart", ".textdiv span, .title span", function () {
@@ -98,16 +104,29 @@ $(function () {
   });
 
   $("#header").on("swipeUp", function(){
-    $(".imgdiv").animate({ height: 50 }, 300, 'linear', function() {
-    });
-    $("#wrapper").animate({ top: 50 }, 300, 'linear', function() {
-    });
+    if (window.orientation === 180 || window.orientation === 0) { //竖屏
+      $(".imgdiv").animate({ height: 50 }, 300, 'linear', function() {   });
+      $("#wrapper").animate({ top: 50 }, 300, 'linear', function() {    });
+    }
+  }).on("swipeLeft", function(){
+    if (window.orientation === 90 || window.orientation === -90 ){ //横屏
+      $(".imgdiv").removeClass("img_load").animate({ 'width': '10%' }, 300, 'linear', function() {});
+      $("#wrapper").animate({ 'margin-left': '10%' }, 300, 'linear', function() {});
+    }
+  }).on("swipeDown", function(){
+    if (window.orientation === 180 || window.orientation === 0) { //竖屏
+      $(".imgdiv").animate({ height: 200 }, 300, 'linear', function() {  });
+      $("#wrapper").animate({ top: 200 }, 300, 'linear', function() {   });
+    }
+  }).on("swipeRight", function(){
+    if (window.orientation === 90 || window.orientation === -90 ){ //横屏
+      $(".imgdiv").animate({ 'width': '40%' }, 300, 'linear', function() {});
+      $("#wrapper").animate({ 'margin-left': '40%' }, 300, 'linear', function() {});
+    }
   });
-  $("#header").on("swipeDown", function(){
-    $(".imgdiv").animate({ height: 200 }, 300, 'linear', function() {
-    });
-    $("#wrapper").animate({ top: 200 }, 300, 'linear', function() {
-    });
-  });
+
+  window.addEventListener("onorientationchange" in window ? "orientationchange" : "resize", function() {
+    $(".imgdiv, #wrapper").removeAttr("style");
+  }, false);
 
 });

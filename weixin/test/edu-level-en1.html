@@ -80,6 +80,9 @@
 			
           <div class="full-page health-bg-green">
             <div class="title">{{handleWord title}}</div>
+            <button class="play-btn">
+              <a href="javascript:void(0);" class="mp3-play" data-s='{{s}}' data-e='{{e}}'><i class="audio-active fa fa-play" aria-hidden="true"></i></a>
+            </button>
           </div>
         </div>
 		{{#each result}} 
@@ -107,7 +110,7 @@
     <!-- Add Pagination -->
     <div class="swiper-pagination"></div>
 
-    <div id="fmp_flash_div" style="display:none"><audio id="audio"></audio><audio id="wordAudio"></audio></div>
+    <div id="fmp_flash_div" style="display:none"><audio id="audio" preload="auto"></audio><audio id="wordAudio"></audio></div>
   </div>
 
   <script src="assets/swiper/js/swiper.min.js"></script>
@@ -181,7 +184,6 @@
       });
 
       $(document).on("click", ".textdiv span, .title span", function () {
-        console.log("dddd");
         var text = $(this).text();
         if(text.indexOf(" ")){
           text = text.split(" ")[0];

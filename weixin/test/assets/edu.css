@@ -158,6 +158,28 @@ font-size: 1.5rem;
   }
 }
 
+@keyframes downArrowAni {
+  0% {
+      opacity: 0;
+      transform: translate3d(-50%, -50%, 0);
+  }
+
+  30% {
+      opacity: 1;
+      transform: translate3d(-50%, -35%, 0);
+  }
+
+  60% {
+      opacity: 0;
+      transform: translate3d(-50%, -20%, 0);
+  }
+
+  100% {
+      opacity: 0;
+      transform: translate3d(-50%, 30%, 0);
+  }
+}
+
 .play-btn{
     padding-left:15px; 
     font-size: 24px; 
@@ -167,6 +189,9 @@ font-size: 1.5rem;
 
   span.activeSpan{
     background: chocolate;
+  }
+  .textdiv .activeli{
+    background: #96b97d;;
   }
   .line_active{
     color: goldenrod;

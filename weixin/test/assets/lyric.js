@@ -14,6 +14,9 @@
     };
     if(typeof obj.callback == 'function'){
       this.callback = obj.callback;
+    };
+    if(typeof obj.followRead=='function'){
+      this.followRead = obj.followRead;
     }
 
 
@@ -55,24 +58,41 @@
   MusicPlayer.prototype.lrcSuccess = function(lyric){
     this.lyric = lyric;
     this.lrcContainer.html('');
+    var ele;
+    var txt;
     for(var x in lyric){
+      ele = $('<li/>').attr('data-time', x);
       if(lyric[x].indexOf("->")>-1){
-        $('<li/>').attr('data-time', x).data('url', lyric[x].replace("->", "")).appendTo(this.lrcContainer);
+        var lcs = lyric[x].split("->");
+        txt = lcs[0];
+        $(ele).data('url', lcs[1]);
       }else{
-        $('<li/>').attr('data-time', x).addClass("validen").text(lyric[x]).appendTo(this.lrcContainer);
+        txt = lyric[x];
+      }
+      
+      var regex = /\s+/g;
+      txt = txt.replace(regex, "</span> <span>");
+
+      $(ele).html('<span>'+txt+'</span>').appendTo(this.lrcContainer);
+      if(x==0){
+        ele.addClass("active");
       }
     }
     
-    var that = this, nt = 0;
+    var that = this, nt = 0, lt=0; 
     if(that.callback)  that.callback(this.player);  
 
     this.player.on('timeupdate', function(e){
       if(that.paused) return;
       var t = Math.floor(that.player[0].currentTime);
       if(nt == t) return;
+      lt = nt;
       nt = t;
       if(typeof that.lyric[t] != 'undefined'){
-        var $nl = that.lrcContainer.find('li').removeClass('active').filter('[data-time="'+ t + '"]').addClass('active');
+        //var $nl = that.lrcContainer.find('li').removeClass('active').filter('[data-time="'+ t + '"]').addClass('active');
+        var $nl = that.lrcContainer.find('li').filter('[data-time="'+ t + '"]');
+        if(that.followRead) that.followRead(lt, nt);
+
         if(that.lyricChange) that.lyricChange({
           time: t,
           target: $nl

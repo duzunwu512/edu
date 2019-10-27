@@ -1,42 +1,35 @@
-[ti: A Picnic in the Rain]
-[ar: by Sharon Fear illustrated by John Bendall-Brunello]
-[al: Moosling]
-[tool: 歌词滚动姬 https://lrc-maker.github.io]
-[length: 01:10.478]
+[00:00.00]->http://localhost/test/data/img/00.png
+[00:00.00]A Picnic in the Rain
+[00:02.50]Moosling
 
-[00:02.083] ->http://localhost/test/data/img/00.png
-[00:02.083] A Picnic in the Rain
-[00:03.631] by Sharon Fear illustrated by John Bendall-Brunello
-[00:04.943] Moosling
-[00:06.142]
-[00:06.142] ->http://localhost/test/data/img/01.png
-[00:07.632] Rabbit wanted to have a picnic.
-[00:09.110] But it was raining.
-[00:11.305] Rabbit saw Mouse.
-[00:11.305] ->http://localhost/test/data/img/02.png
-[00:13.654] “I don’t like the rain,” he said.
-[00:14.970] “Come and sit under my umbrella,” said Mouse.
-[00:16.254] But the umbrella was too small.
-[00:17.389] Mouse wanted to have a picnic with Rabbit.
-[00:17.389] ->http://localhost/test/data/img/03.png
-[00:19.006] But it was raining.
-[00:21.112] They saw Skunk.
-[00:22.583] “We don’t like the rain,” said Rabbit.
-[00:24.289] “Come sit in my tent,” said Skunk.
-[00:25.674] ->http://localhost/test/data/img/04.png
-[00:25.674] But the tent was much too small.
-[00:28.016] Skunk wanted to have a picnic with Mouse and Rabbit.
-[00:30.760] But it was raining hard.
-[00:30.760] ->http://localhost/test/data/img/05.png
-[00:32.102] They saw Moosling.
-[00:34.459] “We want to have a picnic, but we don’t like the rain,” Rabbit said.
-[00:36.421] “Do you have a big tent, Moosling?” said Skunk.
-[00:36.421] ->http://localhost/test/data/img/06.png
-[00:37.958] “No, I don’t have a tent,” Moosling said.
-[00:39.904] “Do you have a big umbrella?” said Mouse.
-[00:41.218] “No, I don’t have a big umbrella,” said Moosling.
-[00:41.218] ->http://localhost/test/data/img/07.png
-[00:42.574] “But I am big,” he said.
-[00:45.922] “I like the rain. And I love picnics! Come and sit under me!”
-[01:00.683] ->http://localhost/test/data/img/08.png
-[01:00.683] And they did.
+[00:04.88]->http://localhost/test/data/img/01.png
+[00:05.83]Rabbit wanted to have a picnic.
+[00:07.03]But it was raining.
+[00:08.02]Rabbit saw Mouse.
+[00:10.01]->http://localhost/test/data/img/02.png
+[00:11.15]“I don’t like the rain,” he said.
+[00:12.21]“Come and sit under my umbrella,” said Mouse.
+[00:16.03]But the umbrella was too small.
+[00:19.36]Mouse wanted to have a picnic with Rabbit.
+[00:20.71]->http://localhost/test/data/img/03.png
+[00:22.31]But it was raining.
+[00:24.65][00:23.10]They saw Skunk.
+[00:26.15]“We don’t like the rain,” said Rabbit.
+[00:28.23]“Come sit in my tent,” said Skunk.
+[00:29.78]->http://localhost/test/data/img/04.png
+[00:30.58]But the tent was much too small.
+[00:33.82]Skunk wanted to have a picnic with Mouse and Rabbit.
+[00:38.04]But it was raining hard.
+[00:39.54]->http://localhost/test/data/img/05.png
+[00:41.02]They saw Moosling.
+[00:42.27]“We want to have a picnic, but we don’t like the rain,” Rabbit said.
+[00:47.00][00:44.51]“Do you have a big tent, Moosling?” said Skunk.
+[00:49.06]->http://localhost/test/data/img/06.png
+[00:50.45]“No, I don’t have a tent,” Moosling said.
+[00:52.84]“Do you have a big umbrella?” said Mouse.
+[00:57.06]“No, I don’t have a big umbrella,” said Moosling.
+[00:59.69]->http://localhost/test/data/img/07.png
+[00:59.79]“But I am big,” he said.
+[01:02.13]“I like the rain. And I love picnics! Come and sit under me!”
+[01:04.48]->http://localhost/test/data/img/08.png
+[01:07.42]And they did.

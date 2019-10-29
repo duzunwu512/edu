@@ -178,3 +178,14 @@ li:empty {
 .fontbtn .smallFont{
   font-size: 16px;
 }
+
+.btn-play-btn{
+  position: absolute;
+  height: 50px;
+  width: 100%;
+  z-index: 100;
+  background: rgba(0,0,0,0);
+  color: #2d2d2d;
+  background-color: #4d9250;
+  padding-top: 5px;
+}

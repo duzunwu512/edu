@@ -1,11 +1,18 @@
 $(function () {
 
   var audio_scroll_end = 0;//上次滚动结束时间
-  var play = false;
   var follow = false;
-
+  var mode = getUrlParam('mode');
   var lyric_file = db['data_'+getUrlParam('lv2_1')].lyric;
   var audio_file = db['data_'+getUrlParam('lv2_1')].audio;
+
+  //适应模式
+  if(mode==='txt'){
+    $("#header").remove();
+    $("#wrapper").css({'top':'0px', 'margin-left': '0px', 'top': '50px'});
+  }else{
+    $("#bottomBtns").remove();
+  }
 
   //播放器字幕
   var m = new MusicPlayer({
@@ -234,6 +241,7 @@ $(function () {
     }
   }
 
+  //移除因放大缩小图而添加的样式
   window.addEventListener("onorientationchange" in window ? "orientationchange" : "resize", function() {
     $(".imgdiv, #wrapper").removeAttr("style");
   }, false);
@@ -276,6 +284,4 @@ $(function () {
       myScroll.refresh();
     }, 1500);
   }
-
-
 });

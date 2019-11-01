@@ -63,11 +63,18 @@ li:empty {
 /*竖屏*/
 @media only screen and (orientation:portrait) {
   .imgdiv {
+    height: 200px;
     width: 100%;
     overflow: hidden;
     text-align: center;
-    height: 200px;
     position: absolute;
+    z-index: 2;
+  }
+  .imgdiv_txt {
+    position: absolute;
+    height: 50px;
+    width: 100%;
+    padding-top: 5px;
     z-index: 2;
   }
   .imgdiv img {
@@ -79,11 +86,19 @@ li:empty {
     width: 100%;
     position: absolute;
     overflow: hidden;
-    top: 200px;
     z-index: 1;
     bottom: 0px;
     left: 0;
     background-color: #4d9250;
+  }
+
+  .textdiv_img {
+    top: 200px;
+  }
+
+  .textdiv_txt {
+    top: 50px;
+    margin-left: 0px;
   }
 
   .textdiv ul {
@@ -129,12 +144,18 @@ li:empty {
 @media only screen and (orientation:landscape) {
   .imgdiv {
     float: left;
-    width: 40%;
-    height: 100%;
     overflow: hidden;
     text-align: center;
     display: flex;
     align-items: center;
+    width: 40%;
+    height: 100%;
+  }
+  .imgdiv_txt {
+    float: left;
+    overflow: hidden;
+    width: 50px;
+    height: 100%;
   }
 
   .imgdiv img {
@@ -143,10 +164,15 @@ li:empty {
   }
 
   .textdiv {
-    margin-left: 40%;
     height: 100%;
     overflow: scroll;
     background-color: #4d9250;
+  }
+  .textdiv_img {
+    margin-left: 40%;
+  }
+  .textdiv_txt {
+    margin-left: 50px;
   }
 
   .title {
@@ -179,13 +205,10 @@ li:empty {
   font-size: 16px;
 }
 
-.btn-play-btn{
-  position: absolute;
-  height: 50px;
-  width: 100%;
+.btn-play-btn{  
   z-index: 100;
   background: rgba(0,0,0,0);
   color: #2d2d2d;
   background-color: #4d9250;
-  padding-top: 5px;
+  color: #e0e0e0;
 }

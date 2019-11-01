@@ -9,7 +9,7 @@ $(function () {
   //适应模式
   if(mode==='txt'){
     $("#header").remove();
-    $("#wrapper").css({'top':'0px', 'margin-left': '0px', 'top': '50px'});
+    $("#wrapper").removeClass("textdiv_img").addClass("textdiv_txt");
   }else{
     $("#bottomBtns").remove();
   }

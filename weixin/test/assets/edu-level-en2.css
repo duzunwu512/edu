@@ -19,9 +19,9 @@ li {
 }
 
 li.active {
-  font-weight: bold;
-  font-size: 26px;
-  color: white;
+  color: #dcde33;
+  background: #0f9e15;
+  background-image: linear-gradient(#4d9250, #239a27, #4d9250);
 }
 
 li:empty {

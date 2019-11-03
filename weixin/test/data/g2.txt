@@ -204,7 +204,6 @@ I said.
 
 So we went up the river!
 
-
 =====================================================
 007 Penguins All About
 Look at the penguin.
@@ -243,6 +242,9 @@ on an egg, too.
 Look at the
 baby penguin!
 
+
+=====================================================
+008
 
 =====================================================
 009 Big Lizard, Little Lizard

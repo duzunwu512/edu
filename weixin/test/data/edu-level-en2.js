@@ -5,6 +5,7 @@ $(function () {
   var mode = getUrlParam('mode');
   var lyric_file = db['data_'+getUrlParam('lv2_1')].lyric;
   var audio_file = db['data_'+getUrlParam('lv2_1')].audio;
+  var default_img = db['data_'+getUrlParam('lv2_1')].img;
 
   //适应模式
   if(mode==='txt'){
@@ -135,7 +136,7 @@ $(function () {
       audio.pause();
     }
 
-    text = text.replace(/[,.!]/g, "");
+    text = text.replace(/[,.!?]/g, "");
     wordAudio.pause();
     wordAudio.src = 'http://dict.youdao.com/dictvoice?type=0&audio='+text;
     wordAudio.play();
@@ -173,7 +174,7 @@ $(function () {
 //关闭进度条
   $('.loading-overlay').slideUp(200, function(){
     $('.loading-overlay').css("display","none");
-    $('.img_load > img').attr("src", "p1.png");
+    $('.img_load > img').attr("src", default_img?default_img:"p1.png");
   });
 
   $(document).on("touchstart", ".textdiv li", function () {

@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>广州市小学英语</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <link rel="stylesheet" href="../css/weui.css" />
+    <link rel="stylesheet" href="../css/weuix.css" />
+    <link rel="icon" href="favicon.png">
+    <link rel="icon" href="favicon.ico">
+
+</head>
+
+<body ontouchstart>
+
+    <div class="page-bg">
+        <div class="page__bd">
+            <div class="weui-cells">
+                <script type="text/template" id="myTemplate">
+                    {{#each list}} 
+                <a class="weui-cell weui-cell_access" href="en-level-gz-unit.html?lv={{url}}">
+                    <div class="weui-cell__bd">
+                        <p>{{title}}</p>
+                        <p style="font-size: 13px;color: #888888;">{{subtitle}}</p>
+                    </div>
+                    <div class="weui-cell__ft">{{ext}}</div>
+                </a>
+                    {{/each}}
+                </script>
+                <a class="weui-cell weui-cell_access" id="words" href="./en-level1-words.html">
+                    <div class="weui-cell__bd">
+                        <span style="vertical-align: middle">小学掌握的单词</span>
+                        <p style="font-size: 13px;color: #888888;">分类整理</p>
+                    </div>
+                    <div class="weui-cell__ft">超好记</div>
+                </a>
+            </div>
+            
+        </div>
+
+    </div>
+
+    <div class="weui-footer weui-footer_fixed-bottom">
+        <p class="weui-footer__links">
+            <a href="../index.html" class="weui-footer__link">钦点小状元</a>
+        </p>
+        <p class="weui-footer__text">Copyright © Dge</p>
+    </div>
+    <script src="../js/zepto.min.js"></script>
+    <script src="data/edu.js"></script>
+    <script src="data/gz.js"></script>
+    <script src="https://cdn.bootcss.com/handlebars.js/4.2.0/handlebars.min.js"></script>
+
+    <script>
+        $(function () {
+            var tpl = $("#myTemplate").html();
+            //预编译模板
+            var template = Handlebars.compile(tpl);
+            //匹配json内容
+            var html = template(gz_list);
+            //输入模板
+            $('#words').before(html);
+        });
+    </script>
+</body>
+
+</html>
